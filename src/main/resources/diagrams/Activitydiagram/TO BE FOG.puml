@@ -1,19 +1,16 @@
 @startuml
 |Kunde|
 start
-:vælg carport;
-fork
-    :byg selv;
-    :formular|
-    end
-fork again
-    :standard carport;
-endfork
-:vælg carport;
-
+    :forside;
+    :vælg
+    byg selv
+    carport;
+    :udfyld specifikation
+    om ønskede carport;
+    :udfyld kontakt oplysninger;
+    :modtag
+    ordre bekræftelse
+    stykliste og tegning|
 stop
-|Sælger|
-
-|FOG system|
 
 @enduml
