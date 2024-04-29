@@ -1,6 +1,7 @@
 @startuml
 |Kunde|
 start
+label sp_lab1
     :forside;
     :vælg
     byg selv
@@ -8,9 +9,13 @@ start
     :udfyld specifikation
     om ønskede carport;
     :udfyld kontakt oplysninger;
+    label sp_lab2
     :modtag
     ordre bekræftelse
     stykliste og tegning|
+
+    label sp_lab1
+    goto sp_lab2
 stop
 
 @enduml

@@ -1,31 +1,80 @@
 @startuml
 |Kunde|
 start
-    :vælg vare;
-    :læg i kurv;
-    :indtast postnummer (levering);
-    :beregner fragtpris|
-    :får fragtpris;
-    :tilføj til kurv;
-    :popup|
-fork
-if(shop videre) then
-end if
-    :vælg vare;
+    :søg efter carport;
+if(sortere carporte) then (ja)
+    :vælg specifikationer
+    (f.eks, bredde, længde osv.);
+else (nej)
+    :vælg en af de
+    fremviste modeller;
+endif
+    :vælg carport;
+    :får bredere
+    beskrivelse
+    af produkt;
 
-fork again
-    :gå til kurv;
-endfork
-    :gå til kassen;
-    :udfyld oplysninger;
-    if(sender mail)
+switch (muligheder på samme side)
+case (carport efter egne mål )
+  :vælg egne mål
+  på carport;
+  :vælg type carport;
+  :udfyld formular;
+  :lav forspørgsel på
+  special mål;
+  :sender forspørgsel som
+  sælger modtager på mail|
+case (andre har også set)
+  :vælg en af de
+  mest besøgte carporte;
+case (dokumenter)
+  :se pdf tegning;
+end
+endswitch
+repeat
+:bliver rådgivet/dialog med sælger;
+    :modtager tilbud;
     :betal;
     :modtager styklist;
-    endif
+end
 
 |Sælger|
     :modtager forspørgsel|
-    :opretter styklist;
-    :Sender ordre;
+repeat while (rådgiver kunde/gennemgår forespørgsel)
+
+    :taster forespøgsel|
+    if(indtaster dimensioner)
+    endif
+    fork
+    :konstruktionsstørrelse;
+    fork again
+    :konstruksionstype;
+    endfork
+        :vælg tag;
+        fork
+        :materiale;
+        :grader ved rejsning
+        (vælg hældning);
+        endfork
+                if (vælg redskabsrum) then (ja)
+                fork
+                :(indtaster dimensioner);
+                :vælg beklædning;
+                :vælg gulv;
+                endfork
+endif
+    repeat :beregn styklist|
+    switch (muligheder på samme side)
+    case (se tegning)
+      :se tegning;
+    case (se beskrivelse af carport)
+      :se konstruksionsbeskrivelse;
+    endswitch
+    :send tilbud til kunde;
+    :modtager betaling|
+    :sender stykliste til kunde;
 stop
+|beregningssystem|
+repeat while (beregner styklist)
+detach
 @enduml
