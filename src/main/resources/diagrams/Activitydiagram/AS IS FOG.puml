@@ -4,8 +4,8 @@ start
     :vælg vare;
     :læg i kurv;
     :indtast postnummer (levering);
-    :beregn fragtpris|
-repeat:får fragtpris;
+    :beregner fragtpris|
+    :får fragtpris;
     :tilføj til kurv;
     :popup|
 fork
@@ -18,22 +18,14 @@ fork again
 endfork
     :gå til kassen;
     :udfyld oplysninger;
-    :forspørgsel|
+    if(sender mail)
     :betal;
+    :modtager styklist;
+    endif
 
 |Sælger|
-    :forspørgsel;
-    :indtast forspørgsel;
-
-while (beregn tilbud)
-
-|FOG's system|
-
-    :beregner tilbud|
-endwhile
-repeat while (beregner fragtpris)
+    :modtager forspørgsel|
     :opretter styklist;
-    :ordre sendt;
-
+    :Sender ordre;
 stop
 @enduml
