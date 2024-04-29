@@ -1,0 +1,39 @@
+@startuml
+|Kunde|
+start
+    :vælg vare;
+    :læg i kurv;
+    :indtast postnummer (levering);
+    :beregn fragtpris|
+repeat:får fragtpris;
+    :tilføj til kurv;
+    :popup|
+fork
+if(shop videre) then
+end if
+    :vælg vare;
+
+fork again
+    :gå til kurv;
+endfork
+    :gå til kassen;
+    :udfyld oplysninger;
+    :forspørgsel|
+    :betal;
+
+|Sælger|
+    :forspørgsel;
+    :indtast forspørgsel;
+
+while (beregn tilbud)
+
+|FOG's system|
+
+    :beregner tilbud|
+endwhile
+repeat while (beregner fragtpris)
+    :opretter styklist;
+    :ordre sendt;
+
+stop
+@enduml
