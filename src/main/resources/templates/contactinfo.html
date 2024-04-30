@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contactinfo</title>
+</head>
+<body>
+<p>Kontaktoplysninger:</p>
+<form method="post">
+  <label for="fullname">Navn*</label>
+  <input type="text" id="fullname" name="fullname" placeholder="Fornavn og efternavn"/><br/>
+
+  <label for="adress">Adresse*</label>
+  <input type="text" id="adress" name="adress" placeholder="Adresse (vej + nummer)"/><br/>
+
+  <label for="zipcode">Postnummer*</label>
+  <input type="text" id="zipcode" name="zipcode" placeholder="Postnummer"/><br/>
+
+  <label for="city">By*</label>
+  <input type="text" id="city" name="city" placeholder="Bynavn"/><br/>
+
+  <label for="phonenumber">Telefon*</label>
+  <input type="text" id="phonenumber" name="phonenumber" placeholder="Telefon nummer"/><br/>
+
+  <label for="email">Email*</label>
+  <input type="text" id="email" name="email" placeholder="Din email adresse"/><br/>
+
+
+
+  <button type="submit" formaction="/order" >Bestil tilbud</button>
+
+  <div><p th:text="${message}"></p></div>
+</form>
+</body>
+</html>

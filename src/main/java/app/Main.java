@@ -1,5 +1,6 @@
 package app;
 
+import app.config.SessionConfig;
 import app.config.ThymeleafConfig;
 import app.controllers.CarportController;
 import app.exceptions.DatabaseException;
