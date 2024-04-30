@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-04-30T10:15:40.549Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="KxTjtGCPRico-ZnOpbj1" version="24.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-30T10:34:58.198Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="SZIzXGQ6gwvfMWhuxtnz" version="24.3.1" type="github">
   <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
-    <mxGraphModel dx="2093" dy="4233" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1793" dy="4233" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="vdoab_yicsTFZKbGhMKv-17" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Aktivitetsdiagram af FOG&lt;/font&gt;" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;" vertex="1" parent="1">
-          <mxGeometry x="626" y="-3232" width="1086.51" height="3312" as="geometry" />
+          <mxGeometry x="602" y="-2874" width="1259.51" height="3312" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-18" value="&lt;u&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;kunden på hjemmesiden&lt;/font&gt;&lt;/u&gt;" style="swimlane;startSize=50;html=1;swimlaneFillColor=#B9E0A5;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-17">
           <mxGeometry y="20" width="496.49" height="3292" as="geometry" />
@@ -94,7 +94,7 @@
         <mxCell id="vdoab_yicsTFZKbGhMKv-64" value="&lt;b&gt;&lt;font color=&quot;#ffffff&quot;&gt;Slut&lt;/font&gt;&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;fillColor=#CCCCCC;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-18">
           <mxGeometry x="364.38" y="929" width="46.25" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="vdoab_yicsTFZKbGhMKv-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-18" source="vdoab_yicsTFZKbGhMKv-66" target="vdoab_yicsTFZKbGhMKv-84">
+        <mxCell id="vdoab_yicsTFZKbGhMKv-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-18" source="vdoab_yicsTFZKbGhMKv-66" target="vdoab_yicsTFZKbGhMKv-84">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-66" value="&lt;div&gt;&lt;b&gt;Mest besøgte &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;carport&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(Andre har set)&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-18">
@@ -128,30 +128,128 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-84" value="&lt;div&gt;&lt;b&gt;Her har kunden &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;valgt den ønskede carport&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-18">
-          <mxGeometry x="188.25" y="1274" width="120" height="80" as="geometry" />
+          <mxGeometry x="188.25" y="1298" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-132" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-18" source="vdoab_yicsTFZKbGhMKv-88" target="vdoab_yicsTFZKbGhMKv-131">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-88" value="&lt;div&gt;&lt;b&gt;Kunden bliver kontaktet af sælger&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(Rådgivning/dialog)&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-18">
           <mxGeometry x="188.25" y="1444" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-131" value="&lt;div&gt;&lt;b&gt;Kunden modtager&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;tilbud &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;fra sælger&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-18">
+          <mxGeometry x="179.74" y="2957" width="120" height="60" as="geometry" />
+        </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-19" value="&lt;div style=&quot;font-size: 13px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;Sælger&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;" style="swimlane;startSize=50;html=1;swimlaneFillColor=#FFD966;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-17">
-          <mxGeometry x="496.49" y="20" width="289.51" height="3292" as="geometry" />
+          <mxGeometry x="496.49" y="20" width="462.51" height="3292" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-79" target="vdoab_yicsTFZKbGhMKv-90">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-79" value="&lt;div&gt;&lt;b&gt;Der bliver sendt &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;en mail med forespørgsel til sælger&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
-          <mxGeometry x="84.75999999999999" y="1235" width="120" height="60" as="geometry" />
+          <mxGeometry x="142.37" y="1235" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-95" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-90" target="vdoab_yicsTFZKbGhMKv-94">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-90" value="&lt;div&gt;&lt;b&gt;Sælger kontakter &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;kunden&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
-          <mxGeometry x="84.75999999999999" y="1375" width="120" height="60" as="geometry" />
+          <mxGeometry x="142.51" y="1444" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-97" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-94" target="vdoab_yicsTFZKbGhMKv-96">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-94" value="&lt;div&gt;&lt;b&gt;Sælger indtaster&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;kunden forespørgsel&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;(Den ønskede carport)&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.37" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-101" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-96" target="vdoab_yicsTFZKbGhMKv-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-96" value="&lt;div&gt;&lt;b&gt;Indtaster &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;dimensioner&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.36999999999998" y="1687" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-100" target="vdoab_yicsTFZKbGhMKv-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-100" value="&lt;div&gt;&lt;b&gt;Konstruktionsstørrelse&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;og&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Konstrutionstype&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.36999999999998" y="1790" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-108" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-102" target="vdoab_yicsTFZKbGhMKv-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-102" value="&lt;div&gt;&lt;b&gt;Indtaster tagtype&lt;/b&gt;&lt;/div&gt;&lt;b&gt;&lt;br&gt;Grader, vælger hældning&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.37" y="1896" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-110" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-107" target="vdoab_yicsTFZKbGhMKv-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-112" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-107" target="vdoab_yicsTFZKbGhMKv-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-107" value="&lt;b&gt;Vælger om der skal være redskabsrum &lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.37" y="2015" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-109" target="vdoab_yicsTFZKbGhMKv-113">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="112" y="2215" />
+              <mxPoint x="112" y="2409" />
+              <mxPoint x="123" y="2409" />
+              <mxPoint x="123" y="2572" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-109" value="&lt;div&gt;&lt;u&gt;&lt;b&gt;Hvis ja&lt;/b&gt;&lt;/u&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;Indtaster &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;beklædning&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;dimensioner&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;og &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;gulv&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.37" y="2155" width="120" height="121" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-114" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-111" target="vdoab_yicsTFZKbGhMKv-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-111" value="&lt;b&gt;Hvis nej&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="308.51" y="2446" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-117" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-113" target="vdoab_yicsTFZKbGhMKv-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-113" value="&lt;div&gt;&lt;b&gt;Sælger &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;får stykliste&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.51" y="2542" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-124" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-116" target="vdoab_yicsTFZKbGhMKv-123">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-116" value="&lt;b&gt;Sælger beregner tilbud&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.51" y="2682" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-127" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-19" source="vdoab_yicsTFZKbGhMKv-123" target="vdoab_yicsTFZKbGhMKv-126">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-123" value="&lt;div&gt;&lt;b&gt;Sælger får tilbud&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;udregnet af beregningssystem&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.51" y="2822" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-126" value="&lt;b&gt;Sælger sender tilbud til kunden&lt;br&gt;&lt;/b&gt;" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-19">
+          <mxGeometry x="142.51" y="2962" width="128.49" height="70" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-20" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;Beregningssystem&lt;/u&gt;&lt;/div&gt;" style="swimlane;startSize=50;html=1;swimlaneFillColor=#FFB570;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-17">
-          <mxGeometry x="786" y="20" width="300.51" height="3292" as="geometry" />
+          <mxGeometry x="959" y="20" width="300.51" height="3292" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-119" value="&lt;div&gt;&lt;b&gt;Beregner &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;tilbud&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="vdoab_yicsTFZKbGhMKv-20">
+          <mxGeometry x="78" y="2682" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-80" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-17" source="vdoab_yicsTFZKbGhMKv-74" target="vdoab_yicsTFZKbGhMKv-79">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="vdoab_yicsTFZKbGhMKv-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-17" source="vdoab_yicsTFZKbGhMKv-90" target="vdoab_yicsTFZKbGhMKv-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="vdoab_yicsTFZKbGhMKv-17" source="vdoab_yicsTFZKbGhMKv-116" target="vdoab_yicsTFZKbGhMKv-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-17" source="vdoab_yicsTFZKbGhMKv-119" target="vdoab_yicsTFZKbGhMKv-123">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1097" y="2872" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vdoab_yicsTFZKbGhMKv-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="vdoab_yicsTFZKbGhMKv-17" source="vdoab_yicsTFZKbGhMKv-126" target="vdoab_yicsTFZKbGhMKv-131">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
