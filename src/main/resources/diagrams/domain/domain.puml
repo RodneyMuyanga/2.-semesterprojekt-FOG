@@ -1,27 +1,21 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+object Kunde
+object Carport
+object Sælger
+object Tilbud
+object Beregninssystem
+object Butik
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+Sælger  --* Butik : has-a
+Kunde --* Sælger
+Beregninssystem --* Sælger
+Tilbud --* Beregninssystem
+Kunde --* Tilbud
+Carport --* Butik
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
 
-class ArrayList {
-Object[] elementData
-size()
-}
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
 
 @enduml
