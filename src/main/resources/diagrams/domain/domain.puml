@@ -5,15 +5,18 @@ object Kunde
 object Carport
 object Sælger
 object Tilbud
-object Beregninssystem
 object Butik
+object Ordrer
+object Stykliste
+object Samlevejledning
 
-Sælger  --* Butik : has-a
-Kunde --* Sælger
-Beregninssystem --* Sælger
-Tilbud --* Beregninssystem
-Kunde --* Tilbud
-Carport --* Butik
+Sælger "M-1"  --* Butik : has-a
+Kunde "M-1"<--> Sælger
+Kunde "1-1"--* Tilbud
+Carport "M-M"--* Butik
+Tilbud "1-1"--* Ordrer
+Ordrer "1-1" --|> Stykliste
+Ordrer "1-1" --|> Samlevejledning
 
 
 
