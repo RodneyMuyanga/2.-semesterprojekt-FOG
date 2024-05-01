@@ -1,22 +1,23 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+
 object Kunde
 object Carport
-object Sælger
 object Tilbud
-object Butik
+object Hjemmeside
 object Ordrer
 object Stykliste
 object Samlevejledning
 
-Sælger "M-1"  --* Butik : has-a
-Kunde "M-1"<--> Sælger
-Kunde "1-1"--* Tilbud
-Carport "M-M"--* Butik
+Kunde --* "1-1" Hjemmeside
+Carport "1-M"--* Hjemmeside
 Tilbud "1-1"--* Ordrer
 Ordrer "1-1" --|> Stykliste
 Ordrer "1-1" --|> Samlevejledning
+Carport "1-1" --* Tilbud
+Kunde "1-M"--* Tilbud
+
 
 
 
