@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-02T09:50:50.557Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="kP2goJ5hna01m3eSunnZ" version="24.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-02T11:06:45.243Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="q0SylD3N5ZosujziZnPF" version="24.3.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1395" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1969" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -16,7 +16,7 @@
         <mxCell id="eHg_oszsOFh-baLFCK9L-27" value="&lt;div&gt;&lt;b&gt;- calculatePrice();&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;- changeDimensions();&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="eHg_oszsOFh-baLFCK9L-24">
           <mxGeometry y="108" width="160" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="eHg_oszsOFh-baLFCK9L-28" value="Costumer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="eHg_oszsOFh-baLFCK9L-28" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="610" y="180" width="160" height="200" as="geometry" />
         </mxCell>
         <mxCell id="eHg_oszsOFh-baLFCK9L-29" value="&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - String firstName;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - String lastName;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - String city;&lt;/div&gt;&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - int zipcode;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - String email;&lt;/div&gt;&lt;div&gt;&lt;b&gt;private&lt;/b&gt; - int phonenumber;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="eHg_oszsOFh-baLFCK9L-28">
