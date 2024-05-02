@@ -1,0 +1,42 @@
+
+.container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    height: 100vh; /* Adjust as needed */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally within the container */
+    color: darkblue;
+    font-family: Cursive, Georgia, "Times New Roman";
+}
+
+.btn {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    align-items: center;
+    width: 150px;
+    padding: 5px;
+
+}
+
+.images {
+    display: block;
+    width: 5%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+h3{
+    color: darkblue;
+    font-family: Cursive, Georgia, "Times New Roman";
+    text-align: center;
+}

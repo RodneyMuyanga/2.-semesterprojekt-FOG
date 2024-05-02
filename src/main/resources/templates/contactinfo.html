@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Contactinfo</title>
+  <link rel="stylesheet" th:href="@{../public/css/styling.css}" href="../public/css/styling.css">
 </head>
+
 <body>
-<p>Kontaktoplysninger:</p>
+<h3>Kontaktoplysninger:</h3>
+
+<img src="../public/images/fog_logo.png" class="images"/>
+
+<div class="container">
+  <div class="form-container">
+
 <form method="post">
   <label for="fullname">Navn*</label>
   <input type="text" id="fullname" name="fullname" placeholder="Fornavn og efternavn"/><br/>
@@ -27,9 +35,13 @@
 
 
 
-  <button type="submit" formaction="/order" >Bestil tilbud</button>
+  <button class="btn" type="submit" formaction="/order" >Bestil tilbud</button>
 
   <div><p th:text="${message}"></p></div>
-</form>
+
+  </div>
+</div>
+
+  </form>
 </body>
 </html>
