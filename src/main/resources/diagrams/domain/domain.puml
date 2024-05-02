@@ -12,9 +12,9 @@ object Samlevejledning
 
 Kunde --* "1-1" Hjemmeside
 Carport "1-M"--* Hjemmeside
-Tilbud "1-1"--* Ordrer
+Tilbud "1-1"--* Ordrer : has-a
 Ordrer "1-1" --|> Stykliste
-Ordrer "1-1" --|> Samlevejledning
+Ordrer "1-1" --|> Samlevejledning : is - a
 Carport "1-1" --* Tilbud
 Kunde "1-M"--* Tilbud
 
