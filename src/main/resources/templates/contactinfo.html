@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Contactinfo</title>
+  <style>
+    body {
+      background-color: #e8f0f8;
+    }
+  </style>
   <link rel="stylesheet" th:href="@{../public/css/styling.css}" href="../public/css/styling.css">
 </head>
 
 <body>
-<h3>Kontaktoplysninger:</h3>
+<h2>Kontaktoplysninger</h2>
 
 <img src="../public/images/fog_logo.png" class="images"/>
 
@@ -15,27 +20,29 @@
   <div class="form-container">
 
 <form method="post">
-  <label for="fullname">Navn*</label>
-  <input type="text" id="fullname" name="fullname" placeholder="Fornavn og efternavn"/><br/>
+  <label for="fullname">Navn*</label><br/>
+  <input type="text" id="fullname" name="fullname" placeholder="Fornavn og efternavn"/><br/><br/>
 
-  <label for="adress">Adresse*</label>
-  <input type="text" id="adress" name="adress" placeholder="Adresse (vej + nummer)"/><br/>
+  <label for="adress">Adresse*</label><br/>
+  <input type="text" id="adress" name="adress" placeholder="Adresse (vej + nummer)"/><br/><br/>
 
-  <label for="zipcode">Postnummer*</label>
-  <input type="text" id="zipcode" name="zipcode" placeholder="Postnummer"/><br/>
+  <label for="zipcode">Postnummer*</label><br/>
+  <input type="text" id="zipcode" name="zipcode" placeholder="Postnummer"/><br/><br/>
 
-  <label for="city">By*</label>
-  <input type="text" id="city" name="city" placeholder="Bynavn"/><br/>
+  <label for="city">By*</label><br/>
+  <input type="text" id="city" name="city" placeholder="Bynavn"/><br/><br/>
 
-  <label for="phonenumber">Telefon*</label>
-  <input type="text" id="phonenumber" name="phonenumber" placeholder="Telefon nummer"/><br/>
+  <label for="phonenumber">Telefon*</label><br/>
+  <input type="text" id="phonenumber" name="phonenumber" placeholder="Telefon nummer"/><br/><br/>
 
-  <label for="email">Email*</label>
-  <input type="text" id="email" name="email" placeholder="Din email adresse"/><br/>
+  <label for="email">Email*</label><br/>
+  <input type="text" id="email" name="email" placeholder="Din email adresse"/><br/><br/>
 
+  <div>
+    <button class="btn" onclick="window.history.back()">Tilbage</button>
+    <button class="btn" type="submit" formaction="payment.html" >Bestil tilbud</button>
 
-
-  <button class="btn" type="submit" formaction="/order" >Bestil tilbud</button>
+  </div>
 
   <div><p th:text="${message}"></p></div>
 

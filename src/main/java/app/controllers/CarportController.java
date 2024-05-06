@@ -9,8 +9,10 @@ public class CarportController {
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
         app.post("/contactinfo.html",ctx -> ctx.render("contactinfo.html"));
-        app.post("/order", ctx -> ctx.render("order.html"));
+        app.post("/payment.html", ctx -> ctx.render("payment.html"));
+        app.post("/order.html", ctx -> ctx.render("order.html"));
     }
+
 
 
 
