@@ -32,6 +32,6 @@ public class CarportController {
         int rafterWoodQuantity = (int) Math.round(length / 55.0);
         int postQuantity = (int) Math.round((length - 200) / 310.0);
         int strapQuantity = (int) Math.ceil(length / 360);
-        CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+        //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
 }
