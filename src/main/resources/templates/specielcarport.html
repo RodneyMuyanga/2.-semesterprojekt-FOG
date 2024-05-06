@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>specielcarportflatroof</title>
+    <style>
+        body {
+            background-color: #e8f0f8;
+        }
+    </style>
 </head>
 <body>
+<h1>Bestil Quick-Byg tilbud - Carport med fladt tag</h1>
+<img src="../public/images/fog_logo.png" class="images"/>
 
-<h2>Bestil Quick-Byg tilbud - carport med fladt tag</h2>
+        <link rel="stylesheet" th:href="@{../public/css/styling.css}" href="../public/css/styling.css">
 
-<p>Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram.
-    Tilbud og skitsetegning vises når du trykker "Bestil tilbud" på næste side.
-    Ved bestilling medfølger standardbyggevejledning. </p> <br/>
-<p>
-    Udfyld formularen omhyggeligt og klik på "Videre".
-    Felter markeret med * SKAL udfyldes!</p> <br/>
+<div class="container">
+    <div class="form-container">
 
-<h2>Carport med fladt tag</h2><br/>
 
 <p>Udfyld nedenstående omhyggeligt og tryk "Videre".
-    Så beregner vi et tilbud til dig.</p>
+    Så beregner vi et tilbud til dig. Felter markeret med * SKAL udfyldes!</p>
 
 <label for="carportwide">Carportens bredde*</label>
 <select name="carportwide" id="carportwide">
@@ -35,7 +37,7 @@
     <option value="540">540 cm</option>
     <option value="570">570 cm</option>
     <option value="600">600 cm</option>
-</select><br/><br/>
+</select><br/>
 
 
 <label for="carportlength">Carportens længde*</label>
@@ -60,25 +62,25 @@
     <option value="750">750 cm</option>
     <option value="780">780 cm</option>
 
-</select><br/><br/>
+</select><br/>
 
 <label for="carportroof">Carport trapeztag*</label>
 <select name="carportroof" id="carportroof">
     <option value="withoutrooftiles">Uden tagplader</option>
     <option value="plastictrapezoidplates">Plasttrapezplader</option>
-</select><br/><br/>
+</select><br/>
 
 
 <label for="comments">Evt. bemærkning / særlige ønsker</label><br>
-<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
-<br/><br/>
-<div>
-    <form method="post" action="contactinfo.html">
-        <button type="submit">Videre</button>
-    </form>
-</div>
-
-
+<textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+        <br/>
+        <div>
+            <button class="btn" onclick="window.history.back()">Tilbage</button>
+            <form method="post" action="contactinfo.html">
+                <button class="btn" type="submit">Videre</button>
+            </form>
+        </div>
+    </div></div>
 
 
 
