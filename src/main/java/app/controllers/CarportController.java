@@ -13,6 +13,7 @@ public class CarportController {
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
         app.post("/contactinfo.html", ctx -> ctx.render("contactinfo.html"));
         app.post("/order", ctx -> ctx.render("order.html"));
+        app.post("/order", ctx -> createCarport(ctx, connectionPool));
     }
 
     private static void createCarport(Context ctx, ConnectionPool connectionPool) {
@@ -20,15 +21,10 @@ public class CarportController {
         String carportwidth = ctx.formParam("carportwidth");
         String carportlength = ctx.formParam("carportlength");
 
-        try {
-            carportCalculater (carportlength, carportwidth, connectionPool);
-
-        } catch (DatabaseException e) {
-            ctx.attribute("message", "Noget gik galt, prøv igen.");
-            ctx.render("specielcarport.html");
-        }
+            carportCalculater(carportlength, carportwidth, connectionPool);
     }
-    public void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool) {
+
+    public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool) {
         // Convert string values to double
         double width = Double.parseDouble(carportwidth);
         double length = Double.parseDouble(carportlength);
@@ -36,6 +32,6 @@ public class CarportController {
         int rafterWoodQuantity = (int) Math.round(length / 55.0);
         int postQuantity = (int) Math.round((length - 200) / 310.0);
         int strapQuantity = (int) Math.ceil(length / 360);
+        CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
-
 }
