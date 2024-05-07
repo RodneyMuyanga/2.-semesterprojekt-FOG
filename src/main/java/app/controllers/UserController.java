@@ -21,14 +21,14 @@ public class UserController {
         String zipcodeStr = ctx.formParam("zipcode");
         String emailCheck = ctx.formParam("email");
 
-        String email;
-        if (emailCheck.contains("@") && emailCheck.contains(".com") || emailCheck.contains(".dk")) {
-            email = emailCheck;
-        } else {
-            ctx.sessionAttribute("message", "Din mail er ikke korrekt");
-            ctx.render("contactinfo.html");
-            return;
-        }
+            String email;
+            if (!(emailCheck.contains("@") && (emailCheck.contains(".com") || emailCheck.contains(".dk")))) {
+                ctx.sessionAttribute("message", "Din mail er ikke korrekt");
+                ctx.render("contactinfo.html");
+                return;
+            } else {
+                email = emailCheck;
+            }
 
         // Check if the input is empty or invalid
         if (phonenumberStr.isEmpty()) {
