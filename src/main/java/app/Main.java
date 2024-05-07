@@ -18,19 +18,29 @@ public class Main {
 
     private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Initializing Javalin and Jetty webserver
-
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("/public");
-            config.jetty.modifyServletContextHandler(handler ->  handler.setSessionHandler(SessionConfig.sessionConfig()));
+            config.jetty.modifyServletContextHandler(handler -> handler.setSessionHandler(SessionConfig.sessionConfig()));
             config.fileRenderer(new JavalinThymeleaf(ThymeleafConfig.templateEngine()));
         }).start(7070);
 
-        // Routing
+        // GET-ruter
+        app.get("/", ctx -> ctx.render("index.html"));
+        app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
+        app.get("/order.html", ctx -> ctx.render("order.html"));
 
-        app.get("/", ctx ->  ctx.render("index.html"));
-       CarportController.addRoutes(app, connectionPool);
+        // POST-rute til beregning af carporten
+        app.post("/calculate", ctx -> {
+            // Udfør beregningerne
+            CarportController.calculateCarport(ctx, connectionPool);
+
+            // Omdiriger til "order" siden
+            ctx.redirect("/order.html");
+        });
+
+        // Tilføj ruter fra CarportController
+        CarportController.addRoutes(app, connectionPool);
     }
 }

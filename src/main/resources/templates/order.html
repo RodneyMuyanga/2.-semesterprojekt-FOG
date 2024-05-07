@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>order</title>
@@ -8,9 +8,48 @@
 <body>
 <img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
 
+<h1>Tillykke med din nye carport!</h1>
+<h2>Her er din stykliste</h2>
+<!--<h3>Spær: <span th:text="${session.rafterWoodQuantity}"></span></h3>
+<h3>Stolper: <span th:text="${session.postQuantity}"></span></h3>
+<h3>Rem: <span th:text="${session.strapQuantity}"></span></h3>-->
 
-<h3>Tillykke med din nye carport!</h3>
-
+<table>
+    <thead>
+    <tr>
+        <th>Beskrivelse</th>
+        <th>Længde</th>
+        <th>Antal</th>
+        <th>Enhed</th>
+        <th>Beskrivelse</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Her kan du indsætte dine data fra sessionen -->
+    <tr>
+        <td>Spær</td>
+        <td><span th:text="${session.selectedLength}"></span> cm</td>
+        <td><span th:text="${session.rafterWoodQuantity}"></span></td>
+        <td>stk.</td>
+        <td>Beskrivelse af spær</td>
+    </tr>
+    <tr>
+        <td>Stolper</td>
+        <td><span th:text="${session.selectedLength}"></span> cm</td>
+        <td><span th:text="${session.postQuantity}"></span></td>
+        <td>stk.</td>
+        <td>Beskrivelse af stolper</td>
+    </tr>
+    <tr>
+        <td>Rem</td>
+        <td><span th:text="${session.selectedLength}"></span> cm</td>
+        <td><span th:text="${session.strapQuantity}"></span></td>
+        <td>stk.</td>
+        <td>Beskrivelse af rem</td>
+    </tr>
+    <!-- Tilføj flere rækker efter behov -->
+    </tbody>
+</table>
 
 </body>
 </html>
