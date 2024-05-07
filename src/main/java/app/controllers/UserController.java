@@ -19,7 +19,16 @@ public class UserController {
         String adress = ctx.formParam("adress");
         String phonenumberStr = ctx.formParam("phonenumber");
         String zipcodeStr = ctx.formParam("zipcode");
-        String email = ctx.formParam("email");
+        String emailCheck = ctx.formParam("email");
+
+        String email;
+        if (emailCheck.contains("@") && emailCheck.contains(".com") || emailCheck.contains(".dk")) {
+            email = emailCheck;
+        } else {
+            ctx.sessionAttribute("message", "Din mail er ikke korrekt");
+            ctx.render("contactinfo.html");
+            return;
+        }
 
         // Check if the input is empty or invalid
         if (phonenumberStr.isEmpty()) {
