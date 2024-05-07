@@ -9,27 +9,63 @@ import io.javalin.http.Context;
 public class UserController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
-        app.post("/contactinfo.html",ctx -> createuser(ctx, connectionPool));
+        app.post("/payment.html", ctx -> createuser(ctx, connectionPool));
+        app.get("/payment.html", ctx -> ctx.render("payment.html"));
     }
 
-    private static void createuser(Context ctx, ConnectionPool connectionPool)
-    {
-        //hent form parameter
+        private static void createuser(Context ctx, ConnectionPool connectionPool) {
+        // Retrieve form parameters
         String fullname = ctx.formParam("fullname");
         String adress = ctx.formParam("adress");
-        Integer phonenumber = Integer.valueOf(ctx.formParam("phonenumber"));
-        Integer zipcode = Integer.valueOf(ctx.formParam("zipcode"));
+        String phonenumberStr = ctx.formParam("phonenumber");
+        String zipcodeStr = ctx.formParam("zipcode");
         String email = ctx.formParam("email");
 
-        try {
-            UserMapper.createuser(fullname, adress, phonenumber, zipcode, email, connectionPool);
-
-        } catch (DatabaseException e) {
-            ctx.attribute("message", "Der skete en fejl, prøv igen");
-            ctx.render("createuser.html");
+        // Check if the input is empty or invalid
+        if (phonenumberStr.isEmpty()) {
+            ctx.sessionAttribute("message", "Du mangler at skrive dit mobilnummer");
+            ctx.render("contactinfo.html");
+            return;
         }
 
+        if (phonenumberStr.length() != 8) {
+            ctx.sessionAttribute("message", "Dit mobilnummer er ikke 8 cifre. Prøv igen.");
+            ctx.render("contactinfo.html");
+            return;
+        }
+
+        // Trim any leading or trailing whitespaces
+        phonenumberStr = phonenumberStr.trim();
+        int phonenumber;
+        try {
+            // Attempt to parse the string to an integer
+            phonenumber = Integer.parseInt(phonenumberStr);
+        } catch (NumberFormatException e) {
+            ctx.sessionAttribute("message", "Dit mobilnummer må kun bestå af tal");
+            ctx.render("contactinfo.html");
+            return;
+        }
+
+        int zipcode;
+        try {
+            // Attempt to parse the string to an integer
+            zipcode = Integer.parseInt(zipcodeStr);
+        } catch (NumberFormatException e) {
+            ctx.render("contactinfo.html");
+            ctx.sessionAttribute("message", "Postnummeret må kun bestå af tal");
+            return; // Return early to prevent further processing
+        }
+
+        try {
+            // Call UserMapper with all validated parameters
+            UserMapper.createuser(fullname, adress, phonenumber, zipcode, email, connectionPool);
+            ctx.redirect("/payment.html");
+        } catch (DatabaseException e) {
+            ctx.attribute("message", "Der skete en fejl, prøv igen");
+            ctx.render("contactinfo.html");
+        }
     }
 
-}
+
+    }
 
