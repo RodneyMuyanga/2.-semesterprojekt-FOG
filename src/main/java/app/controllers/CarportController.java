@@ -1,13 +1,12 @@
 package app.controllers;
-
-import app.entities.Carport;
-import app.exceptions.DatabaseException;
-import app.persistence.CarportMapper;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
 public class CarportController {
+    private static int rafterWoodQuantity;
+    private static int postQuantity;
+    private static int strapQuantity;
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
 
@@ -39,9 +38,21 @@ public class CarportController {
         double width = Double.parseDouble(carportwidth);
         double length = Double.parseDouble(carportlength);
 
-        int rafterWoodQuantity = (int) Math.round(length / 55.0);
-        int postQuantity = (int) Math.round((length - 200) / 310.0);
-        int strapQuantity = (int) Math.ceil(length / 360);
+        rafterWoodQuantity = (int) Math.round(length / 55.0);
+        postQuantity = Math.max((int) Math.round(((length - 100) / 210.0)*2), 4); // Ensuring minimum of 4 posts
+        strapQuantity = (int) Math.ceil((length / 360)*2);
         //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+    }
+
+    public int getRafterWoodQuantity() {
+        return rafterWoodQuantity;
+    }
+
+    public int getPostQuantity() {
+        return postQuantity;
+    }
+
+    public int getStrapQuantity() {
+        return strapQuantity;
     }
 }
