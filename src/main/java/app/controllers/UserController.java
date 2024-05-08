@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.entities.User;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
 import app.persistence.UserMapper;
@@ -15,13 +16,20 @@ public class UserController {
         app.get("/payment.html", ctx -> ctx.render("payment.html"));
     }
 
-        private static void createuser(Context ctx, ConnectionPool connectionPool) {
+        private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
         // Retrieve form parameters
         String fullname = ctx.formParam("fullname");
         String adress = ctx.formParam("adress");
         String phonenumberStr = ctx.formParam("phonenumber");
         String zipcodeStr = ctx.formParam("zipcode");
         String emailCheck = ctx.formParam("email");
+
+            // Store form parameters in model attributes
+            ctx.attribute("fullname", fullname);
+            ctx.attribute("adress", adress);
+            ctx.attribute("phonenumber", phonenumberStr);
+            ctx.attribute("zipcode", zipcodeStr);
+            ctx.attribute("email", emailCheck);
 
             String email;
             if (!(emailCheck.contains("@") && (emailCheck.contains(".com") || emailCheck.contains(".dk")))) {
@@ -76,6 +84,8 @@ public class UserController {
             ctx.render("contactinfo.html");
         }
     }
+    
+    
 
 
     }
