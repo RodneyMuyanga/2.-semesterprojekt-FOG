@@ -5,12 +5,15 @@
     <title>order</title>
     <link rel="stylesheet" th:href="@{../public/css/styling.css}" href="../public/css/styling.css">
 </head>
-<link rel="stylesheet" th:href="@{../public/css/styling.css}" href="../public/css/styling.css">
+<link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
 <body>
+<img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
+
 <h1>Tak for din bestilling!</h1>
-<form method="post">
+
+<form method="post" action="order.html">
 <h3>Her er en skitse af din nye carport</h3>
-<svg version="1.1" viewBox="0 0 900 750" preserveAspectRatio="xMinYMin">
+<svg viewBox="0 0 900 750" preserveAspectRatio="xMinYMin">
     <defs>
         <marker id="a" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto">
             <path d="M0,6 L12,0 L12,12 L0,6" fill="#000"/>
@@ -40,8 +43,7 @@
     <text x="450" y="670" style="text-anchor:middle">780 cm</text>
 </svg>
     <div>
-    <button class="btn" onclick="window.history.back()">Tilbage</button> <br/>
-<button class="btn" type="submit" formaction="order.html" >Køb</button>
+        <button class="btn" type="submit">Køb</button>
     </div>
 </form>
 

@@ -77,7 +77,7 @@ input[type="text"] {
 
 input[type="text"],
 select[name="carportlength"],
-select[name="carportwide"],
+select[name="carportwidth"],
 select[name="carportroof"],
 textarea[name="comments"] {
     border-radius: 10px;
