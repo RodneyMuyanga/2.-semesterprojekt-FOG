@@ -1,12 +1,9 @@
 package app.controllers;
-
-import app.entities.User;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
 import app.persistence.UserMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
 import java.sql.SQLException;
 
 public class UserController {
@@ -65,6 +62,11 @@ public class UserController {
             return;
         }
 
+               if (zipcodeStr.length() != 4) {
+                ctx.sessionAttribute("message", "Postnummeret er ugyldigt. Prøv igen.");
+                ctx.render("contactinfo.html");
+                return;
+            }
         int zipcode;
         try {
             // Attempt to parse the string to an integer

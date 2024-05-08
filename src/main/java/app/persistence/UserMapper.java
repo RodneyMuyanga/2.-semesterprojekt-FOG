@@ -1,5 +1,5 @@
 package app.persistence;
-
+  
 import app.entities.User;
 import app.exceptions.DatabaseException;
 import java.sql.Connection;
@@ -67,3 +67,4 @@ public class UserMapper {
         }
     }
 }
+
