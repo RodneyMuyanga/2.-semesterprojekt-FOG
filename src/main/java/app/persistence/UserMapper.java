@@ -37,7 +37,8 @@ public class UserMapper {
                 int rowsAffectedUpdate = updatePs.executeUpdate();
                 if (rowsAffectedUpdate != 1) {
                     throw new DatabaseException("Fejl under opdatering af kontaktoplysninger");
-                } else {
+                }
+            }else {
                     String sql = "INSERT INTO public.\"user\"(\n" +
                             "user_name, user_adress, user_phonenumber, user_zipcode, user_email, role)\n" +
                             "VALUES (?, ?, ?, ?, ?, ?);";
@@ -66,5 +67,4 @@ public class UserMapper {
             }
         }
     }
-}
 
