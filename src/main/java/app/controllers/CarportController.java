@@ -10,10 +10,20 @@ import io.javalin.http.Context;
 public class CarportController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
+        app.post("/contactinfo.html", ctx -> {
+            String carportWidth = ctx.formParam("carportwidth");
+            String carportLength = ctx.formParam("carportlength");
+            // Store selected width and length in session
+            ctx.sessionAttribute("selectedWidth", carportWidth);
+            ctx.sessionAttribute("selectedLength", carportLength);
+            ctx.redirect("/payment.html");
+        });
+
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
-        app.post("/contactinfo.html", ctx -> ctx.render("contactinfo.html"));
+        app.get("/contactinfo.html", ctx -> ctx.render("contactinfo.html"));
         app.post("/order.html", ctx -> ctx.render("order.html"));
         app.post("/order", ctx -> createCarport(ctx, connectionPool));
+
     }
 
     private static void createCarport(Context ctx, ConnectionPool connectionPool) {
@@ -21,7 +31,7 @@ public class CarportController {
         String carportwidth = ctx.formParam("carportwidth");
         String carportlength = ctx.formParam("carportlength");
 
-            carportCalculater(carportlength, carportwidth, connectionPool);
+        carportCalculater(carportlength, carportwidth, connectionPool);
     }
 
     public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool) {

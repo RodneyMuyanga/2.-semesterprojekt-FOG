@@ -13,7 +13,7 @@ public class UserController {
         app.get("/payment.html", ctx -> ctx.render("payment.html"));
     }
 
-        private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
+    private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
         // Retrieve form parameters
         String fullname = ctx.formParam("fullname");
         String adress = ctx.formParam("adress");
@@ -21,21 +21,20 @@ public class UserController {
         String zipcodeStr = ctx.formParam("zipcode");
         String emailCheck = ctx.formParam("email");
 
-            // Store form parameters in model attributes
-            ctx.attribute("fullname", fullname);
-            ctx.attribute("adress", adress);
-            ctx.attribute("phonenumber", phonenumberStr);
-            ctx.attribute("zipcode", zipcodeStr);
-            ctx.attribute("email", emailCheck);
+        ctx.attribute("fullname", fullname);
+        ctx.attribute("adress", adress);
+        ctx.attribute("phonenumber", phonenumberStr);
+        ctx.attribute("zipcode", zipcodeStr);
+        ctx.attribute("email", emailCheck);
 
-            String email;
-            if (!(emailCheck.contains("@") && (emailCheck.contains(".com") || emailCheck.contains(".dk")))) {
-                ctx.sessionAttribute("message", "Din mail er ikke korrekt");
-                ctx.render("contactinfo.html");
-                return;
-            } else {
-                email = emailCheck;
-            }
+        String email;
+        if (!(emailCheck.contains("@") && (emailCheck.contains(".com") || emailCheck.contains(".dk")))) {
+            ctx.sessionAttribute("message", "Din mail er ikke korrekt");
+            ctx.render("contactinfo.html");
+            return;
+        } else {
+            email = emailCheck;
+        }
 
         // Check if the input is empty or invalid
         if (phonenumberStr.isEmpty()) {
@@ -86,9 +85,7 @@ public class UserController {
             ctx.render("contactinfo.html");
         }
     }
-    
-    
 
 
-    }
+}
 

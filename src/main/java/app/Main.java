@@ -19,21 +19,15 @@ public class Main {
 
     private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
-    public static void main(String[] args)
-    {
-        // Initializing Javalin and Jetty webserver
-
+    public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
-            config.jetty.modifyServletContextHandler(handler ->  handler.setSessionHandler(SessionConfig.sessionConfig()));
+            config.jetty.modifyServletContextHandler(handler -> handler.setSessionHandler(SessionConfig.sessionConfig()));
             config.staticFiles.add("/public");
             config.fileRenderer(new JavalinThymeleaf(ThymeleafConfig.templateEngine()));
         }).start(7070);
 
-        // Routing
-        //Hej med dig Michella
-
-        app.get("/", ctx ->  ctx.render("index.html"));
-       CarportController.addRoutes(app, connectionPool);
+        app.get("/", ctx -> ctx.render("index.html"));
+        CarportController.addRoutes(app, connectionPool);
         UserController.addRoutes(app, connectionPool);
     }
 }
