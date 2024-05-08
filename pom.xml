@@ -87,6 +87,13 @@
             <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 
@@ -137,5 +144,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
