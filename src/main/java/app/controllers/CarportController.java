@@ -34,6 +34,11 @@ public class CarportController {
         //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
 
+    public static void calculatePrice() {
+
+
+    }
+
     public int getRafterWoodQuantity() {
         return rafterWoodQuantity;
     }

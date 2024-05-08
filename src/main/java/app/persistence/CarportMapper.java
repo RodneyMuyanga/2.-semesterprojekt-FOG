@@ -11,6 +11,14 @@ import java.util.Map;
 
 public class CarportMapper {
 
+    public static double calculateFinalPrice(int rafterWoodQuantity, int postQuantity, int strapQuantity) {
+        double price = 0;
+
+        String sql = "SELECT \"material_listID\", name, description, price\n" +
+                "\tFROM public.material_list";
+
+        return price;
+    }
     public static void insertOrderline(Map<String, String> materialList, int orderId, ConnectionPool connectionPool) {
         String sql = "INSERT INTO orderline (orderlinieid, quantity, product_name, product_description) VALUES (?, ?, ?, ?)";
 
