@@ -13,9 +13,11 @@
 
 <body>
 <h2>Kontaktoplysninger</h2>
+
 <div th:if="${session.message}">
   <p th:text="${session.message}"></p>
 </div>
+
 
 
 <img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
@@ -40,7 +42,6 @@
   <input type="text" id="email" name="email" placeholder="Din email adresse" th:value="${email}" required/><br/><br/>
 
   <div>
-    <button class="btn" onclick="window.history.back()">Tilbage</button>
     <button class="btn" type="submit">Bestil tilbud</button>
 
   </div>
