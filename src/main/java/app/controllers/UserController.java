@@ -6,6 +6,8 @@ import app.persistence.UserMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
+import java.sql.SQLException;
+
 public class UserController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
@@ -69,7 +71,7 @@ public class UserController {
             // Call UserMapper with all validated parameters
             UserMapper.createuser(fullname, adress, phonenumber, zipcode, email, connectionPool);
             ctx.redirect("/payment.html");
-        } catch (DatabaseException e) {
+        } catch (DatabaseException | SQLException e) {
             ctx.attribute("message", "Der skete en fejl, prøv igen");
             ctx.render("contactinfo.html");
         }
