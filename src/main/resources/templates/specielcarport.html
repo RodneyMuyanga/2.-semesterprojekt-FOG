@@ -13,8 +13,8 @@
 <h1>Bestil Quick-Byg tilbud - Carport med fladt tag</h1>
 <img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
 
-        <link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
 
+        <link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
 <div class="container">
     <div class="form-container">
 
@@ -75,8 +75,10 @@
 <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
         <br/>
         <div>
-                <button class="btn" type="submit">Videre</button>
+            <button class="btn" type="button" onclick="history.back()">Tilbage</button>
+            <button class="btn" type="submit">Videre</button>
         </div>
+
     </div></div>
 </form>
 
