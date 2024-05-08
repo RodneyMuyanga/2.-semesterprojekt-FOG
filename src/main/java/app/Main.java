@@ -30,6 +30,7 @@ public class Main {
         }).start(7070);
 
         // Routing
+        //Hej med dig Michella
 
         app.get("/", ctx ->  ctx.render("index.html"));
        CarportController.addRoutes(app, connectionPool);
