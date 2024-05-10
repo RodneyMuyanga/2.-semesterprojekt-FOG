@@ -7,7 +7,10 @@ import app.controllers.UserController;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
+import io.javalin.http.Context;
 import io.javalin.rendering.template.JavalinThymeleaf;
+
+import static app.controllers.CarportController.calculatePrice;
 
 
 public class Main {

@@ -1,7 +1,10 @@
 package app.controllers;
+import app.persistence.CarportMapper;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
+import java.util.Map;
 
 public class CarportController {
     private static int rafterWoodQuantity;
@@ -13,6 +16,7 @@ public class CarportController {
         app.post("/contactinfo.html", ctx -> ctx.render("contactinfo.html"));
         app.post("/order.html", ctx -> ctx.render("order.html"));
         app.post("/order", ctx -> createCarport(ctx, connectionPool));
+        app.post("/payment", ctx -> calculatePrice(connectionPool, ctx));
     }
 
     private static void createCarport(Context ctx, ConnectionPool connectionPool) {
@@ -34,11 +38,14 @@ public class CarportController {
         //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
 
-    public static void calculatePrice() {
+    public static void calculatePrice(ConnectionPool connectionPool, Context ctx) {
 
+        double totalPrice = CarportMapper.calculateFinalPrice(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+        System.out.println("Total Price: " + totalPrice);
+        ctx.sessionAttribute("totalPrice", totalPrice);
+        ctx.render("payment.html", Map.of("totalPrice", totalPrice));
 
     }
-
     public int getRafterWoodQuantity() {
         return rafterWoodQuantity;
     }
