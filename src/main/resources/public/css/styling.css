@@ -82,4 +82,9 @@ textarea[name="comments"] {
     background-color: #e8f0f8;
 }
 
+.carport-svg-topview {
+    max-width: 600px;
+    max-height: 600px;
+}
+
 

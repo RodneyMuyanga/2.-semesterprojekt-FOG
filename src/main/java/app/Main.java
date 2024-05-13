@@ -3,6 +3,7 @@ package app;
 import app.config.SessionConfig;
 import app.config.ThymeleafConfig;
 import app.controllers.CarportController;
+import app.controllers.OrderController;
 import app.controllers.UserController;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
@@ -10,7 +11,6 @@ import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.javalin.rendering.template.JavalinThymeleaf;
 
-import static app.controllers.CarportController.calculatePrice;
 
 
 public class Main {
@@ -38,5 +38,6 @@ public class Main {
         app.get("/", ctx ->  ctx.render("index.html"));
        CarportController.addRoutes(app, connectionPool);
         UserController.addRoutes(app, connectionPool);
+        OrderController.addRoutes(app, connectionPool);
     }
 }

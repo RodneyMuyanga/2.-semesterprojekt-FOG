@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class UserController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
+        app.post("/contactinfo.html", ctx -> ctx.render("contactinfo.html"));
         app.post("/payment.html", ctx -> createuser(ctx, connectionPool));
         app.get("/payment.html", ctx -> ctx.render("payment.html"));
     }
