@@ -12,10 +12,13 @@ import static app.controllers.CarportController.createCarport;
 public class UserController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
-        app.post("/index", ctx -> createuser(ctx, connectionPool));
+        app.post("/index.html", ctx -> createuser(ctx, connectionPool));
         app.get("/login.html", ctx -> ctx.render("login.html"));
         app.post("/login", ctx -> login(ctx, connectionPool));
         app.get("/mypage.html", ctx -> ctx.render("mypage.html"));
+        app.get("/index.html", ctx -> ctx.render("index.html"));
+        app.get("/createuser.html", ctx -> ctx.render("createuser.html"));
+       // app.post("/createuser.html", ctx -> createuser(ctx, connectionPool));
     }
 
 
@@ -87,7 +90,8 @@ public class UserController {
         try {
             // Call UserMapper with all validated parameters
             UserMapper.createuser(fullname, adress, phonenumber, zipcode, email, password, connectionPool);
-            ctx.redirect("/payment.html");
+            login(ctx, connectionPool);
+            ctx.redirect("/index.html");
         } catch (DatabaseException | SQLException e) {
             ctx.sessionAttribute("message", "Din email findes allerede, prøv igen eller log ind");
             ctx.render("createuser.html");
@@ -105,6 +109,7 @@ public class UserController {
             User user = UserMapper.login(email, password, connectionPool);
             if (user != null) {
             ctx.sessionAttribute("currentUser", user);
+                ctx.sessionAttribute("message", null);
             ctx.redirect("/");
             } else {
                 ctx.sessionAttribute("message", "Forkert brugernavn eller adgangskode. Prøv igen.");

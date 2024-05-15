@@ -16,9 +16,18 @@ public class CarportController {
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
         app.post("/order.html", ctx -> ctx.render("order.html"));
-        app.post("/createuser.html", ctx -> {createCarport(ctx, connectionPool); ctx.render("createuser.html");});
-        app.post("/payment.html", ctx -> {calculatePrice(connectionPool, ctx);
-        showOrder(ctx);});
+        //app.post("/createuser.html", ctx -> {createCarport(ctx, connectionPool); ctx.render("createuser.html");});
+        app.post("/orderconfirmation.html", ctx -> {
+            if (userIsLoggedIn(ctx)) {
+                ctx.render("orderconfirmation.html");
+            } else {
+                ctx.sessionAttribute("message", "Du skal være logget ind for at bestille");
+                ctx.redirect("/login.html");
+            }
+        });
+        app.post("/payment.html", ctx -> {createCarport(ctx, connectionPool);
+        showOrder(ctx);
+    });
     }
 
     private static void showOrder(Context ctx){
@@ -42,7 +51,8 @@ public class CarportController {
     }
 
         public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool, Context ctx) {
-        // Convert string values to double
+
+    // Convert string values to double
         double width = Double.parseDouble(carportwidth);
         double length = Double.parseDouble(carportlength);
 
