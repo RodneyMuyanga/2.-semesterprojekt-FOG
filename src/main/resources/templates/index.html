@@ -17,9 +17,29 @@
     <div class="form-container">
 <img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
 
+        <div th:if="${session.currentUser != null}">
+            <span th:text="${session.currentUser.email}"></span>
+        </div>
+
+
 <img src="../public/images/carport_index.png"alt="Dette er billede af carport" class="carportimage"th:src="@{/images/carport_index.png}"/>
 <h2>Her kan du købe din drømme carport</h2>
+        <div th:if="${session.message}">
+            <p th:text="${session.message}"></p>
+        </div>
 <a href="specielcarport.html" title="Go to build carport page"><h3>Byg selv carport</h3></a>
+
+        <div th:if="${session.currentUser == null}">
+            <form method="get" action="login.html">
+                <button class="btn" type="submit">Log ind</button>
+            </form>
+        </div>
+        <br/>
+        <div th:if="${session.currentUser == null}">
+            <form method="get" action="createuser">
+                <button class="btn" type="submit">Opret bruger</button>
+            </form>
+        </div>
 
     </div></div>
 </body>

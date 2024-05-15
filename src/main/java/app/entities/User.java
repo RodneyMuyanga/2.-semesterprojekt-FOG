@@ -8,12 +8,15 @@ public class User {
     private int zipcode;
     private String email;
 
-    public User(String name, String adress, int phonenumber, int zipcode, String email) {
+    private String password;
+
+    public User(int user_id, String name, String adress, int phonenumber, int zipcode, String email, String role, int user_number, String password) {
         this.name = name;
         this.adress = adress;
         this.phonenumber = phonenumber;
         this.zipcode = zipcode;
         this.email = email;
+        this.password = password;
     }
 
     public User() {}
@@ -36,5 +39,9 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

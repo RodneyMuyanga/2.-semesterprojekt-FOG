@@ -1,4 +1,6 @@
 package app.controllers;
+import app.entities.Carport;
+import app.entities.User;
 import app.persistence.CarportMapper;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
@@ -14,7 +16,13 @@ public class CarportController {
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
         app.post("/order.html", ctx -> ctx.render("order.html"));
-        app.post("/contactinfo", ctx -> createCarport(ctx, connectionPool));
+        app.post("/createuser.html", ctx -> {createCarport(ctx, connectionPool); ctx.render("createuser.html");});
+        app.post("/payment.html", ctx -> {calculatePrice(connectionPool, ctx);
+        showOrder(ctx);});
+    }
+
+    private static void showOrder(Context ctx){
+        OrderController.showOrder(ctx);
     }
 
     public static void createCarport(Context ctx, ConnectionPool connectionPool) {
@@ -26,7 +34,11 @@ public class CarportController {
         ctx.sessionAttribute("carportwidth", carportwidth);
         ctx.sessionAttribute("carportlength", carportlength);
 
+        double width = Double.parseDouble(carportwidth);
+        double length = Double.parseDouble(carportlength);
+
             carportCalculater(carportlength, carportwidth, connectionPool, ctx);
+            new Carport(width, length, getPostQuantity(), getStrapQuantity(), rafterWoodQuantity);
     }
 
         public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool, Context ctx) {
@@ -39,7 +51,7 @@ public class CarportController {
         strapQuantity = (int) Math.ceil((length / 360)*2);
 
         calculatePrice(connectionPool, ctx);
-            ctx.render("contactinfo.html");
+            ctx.render("createuser.html");
         //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
 
@@ -51,6 +63,11 @@ public class CarportController {
         ctx.render("/payment.html");
 
     }
+    private static boolean userIsLoggedIn(Context ctx) {
+        return ctx.sessionAttribute("currentUser") instanceof User;
+    }
+
+
 
 
     public static int getRafterWoodQuantity() {

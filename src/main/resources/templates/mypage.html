@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mypage</title>
+    <style>
+        body {
+            background-color: #e8f0f8;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
+</head>
+<body>
+<img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
+<div class="container">
+    <div class="form-container">
+
+<h3>Min side</h3>
+        <div th:if="${session.carport != null}">
+            <a href="mypage.html" th:href="@{/backToOrder}">Tilbage til min ordre</a>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
