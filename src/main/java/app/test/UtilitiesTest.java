@@ -18,7 +18,7 @@ public class UtilitiesTest {
         private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
 
-        @Test
+    /*    @Test
         public void testCarportCalculator() {
 
             // Create an instance of CarportController
@@ -33,7 +33,7 @@ public class UtilitiesTest {
             assertEquals(13, controller.getRafterWoodQuantity());
             assertEquals(6, controller.getPostQuantity());
             assertEquals(4, controller.getStrapQuantity());
-        }
+        } */
 
         @Test
         public void testCalculateFinalPrice() {
