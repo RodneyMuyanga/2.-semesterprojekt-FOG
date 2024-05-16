@@ -17,7 +17,7 @@ public class CarportController {
         app.post("/contactinfo", ctx -> createCarport(ctx, connectionPool));
     }
 
-    public static void createCarport(Context ctx, ConnectionPool connectionPool) {
+    private static void createCarport(Context ctx, ConnectionPool connectionPool) {
         //hent form parameter
         String carportwidth = ctx.formParam("carportwidth");
         String carportlength = ctx.formParam("carportlength");
@@ -26,7 +26,7 @@ public class CarportController {
         ctx.sessionAttribute("carportwidth", carportwidth);
         ctx.sessionAttribute("carportlength", carportlength);
 
-            carportCalculater(carportlength, carportwidth, connectionPool, ctx);
+        carportCalculater(carportlength, carportwidth, connectionPool, ctx);
     }
 
         public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool, Context ctx) {
@@ -49,7 +49,6 @@ public class CarportController {
         totalPrice = Math.round(totalPrice * 100.0) / 100.0;
         ctx.sessionAttribute("totalPrice", totalPrice);
         ctx.render("/payment.html");
-
     }
 
 
