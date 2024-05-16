@@ -2,15 +2,13 @@ package app.entities;
 
 public class Carport {
     double carportWidth;
-    double carportHeight;
     double carportLength;
     int post;
     int strap;
     int rafterWood;
 
-    public Carport(double carportWidth, double carportHeight, double carportLength, int post, int strap, int rafterWood) {
+    public Carport(double carportWidth, double carportLength, int post, int strap, int rafterWood) {
         this.carportWidth = carportWidth;
-        this.carportHeight = carportHeight;
         this.carportLength = carportLength;
         this.post = post;
         this.strap = strap;
@@ -21,12 +19,6 @@ public class Carport {
     }
     public void setCarportWidth(double carportWidth) {
         this.carportWidth = carportWidth;
-    }
-    public double getCarportHeight() {
-        return carportHeight;
-    }
-    public void setCarportHeight(double carportHeight) {
-        this.carportHeight = carportHeight;
     }
     public double getCarportLength() {
         return carportLength;

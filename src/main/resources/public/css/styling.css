@@ -76,6 +76,7 @@ input[type="text"] {
 
 
 input[type="text"],
+input[type="password"],
 select[name="carportlength"],
 select[name="carportwidth"],
 select[name="carportroof"],

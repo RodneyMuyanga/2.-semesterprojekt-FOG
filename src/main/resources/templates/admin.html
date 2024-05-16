@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+</head>
+<link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
+<style>
+    body {
+        background-color: #e8f0f8;
+    }
+</style>
+<body>
+<h1>Her er alle ordrer:</h1>
+<div class="container">
+    <div class="form-container">
+        <img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
+<div>
+    <ul>
+        <!-- Use Thymeleaf each loop to iterate over orders -->
+        <li th:each="order : ${session.orders}">
+            <!-- Display order details -->
+            <span th:text="|Ordrer nummer: ${order.orderNumber}, Kunde nummer: ${order.userNumber}, Pris: ${order.price} kr., Bredde: ${order.width}, Længde: ${order.length}|"></span>
+            <!-- Button to approve order -->
+            <form method="post" action="/approve" style="display: inline;">
+                <input type="hidden" name="orderNumber" th:value="${order.orderNumber}" />
+                <input class="btn" type="submit" value="Godkend" /> <br/><br/>
+            </form>
+        </li>
+    </ul>
+</div>
+    </div>
+</div>
+</body>
+</html>

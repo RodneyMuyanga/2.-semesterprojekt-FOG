@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>log ind</title>
+    <link rel="stylesheet" th:href="@{/css/styling.css}" href="../public/css/styling.css">
+    <style>
+        body {
+            background-color: #e8f0f8;
+        }
+    </style>
+</head>
+<body>
+<img src="../public/images/fog_logo.png" class="images" th:src="@{/images/fog_logo.png}"/>
+<div class="container">
+    <div class="form-container">
+<h2>Log ind</h2>
+
+        <div th:if="${session.message}">
+            <p th:text="${session.message}"></p>
+        </div>
+
+
+        <form method="post" action="/login">
+
+    <input type="text" name="email" placeholder="Skriv din email"/> <br/><br/>
+    <input type="password" name="password" placeholder="Skriv din adgangskode"/> <br/> <br/>
+
+            <div>
+                <button class="btn" type="button" onclick="window.location.href='/index.html'">Til forsiden</button>
+    <button class="btn" type="submit" >Log på</button>
+    </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
