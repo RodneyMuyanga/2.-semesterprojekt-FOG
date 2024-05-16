@@ -18,11 +18,9 @@ public class UserController {
         app.get("/mypage.html", ctx -> ctx.render("mypage.html"));
         app.get("/index.html", ctx -> ctx.render("index.html"));
         app.get("/createuser.html", ctx -> ctx.render("createuser.html"));
-       // app.post("/createuser.html", ctx -> createuser(ctx, connectionPool));
     }
 
-
-        private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
+private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
         // Retrieve form parameters
         String fullname = ctx.formParam("fullname");
         String adress = ctx.formParam("adress");
@@ -122,6 +120,6 @@ public class UserController {
         }
 
     }
+}
 
-    }
 

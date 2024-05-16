@@ -34,7 +34,7 @@ public class CarportController {
         OrderController.showOrder(ctx);
     }
 
-    public static void createCarport(Context ctx, ConnectionPool connectionPool) {
+      public static void createCarport(Context ctx, ConnectionPool connectionPool) {
         //hent form parameter
         String carportwidth = ctx.formParam("carportwidth");
         String carportlength = ctx.formParam("carportlength");
@@ -71,7 +71,6 @@ public class CarportController {
         totalPrice = Math.round(totalPrice * 100.0) / 100.0;
         ctx.sessionAttribute("totalPrice", totalPrice);
         ctx.render("/payment.html");
-
     }
     private static boolean userIsLoggedIn(Context ctx) {
         return ctx.sessionAttribute("currentUser") instanceof User;
