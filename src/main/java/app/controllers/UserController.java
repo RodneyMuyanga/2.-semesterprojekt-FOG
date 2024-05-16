@@ -110,6 +110,7 @@ public class UserController {
             if (user != null) {
             ctx.sessionAttribute("currentUser", user);
                 ctx.sessionAttribute("message", null);
+                ctx.sessionAttribute("userRole", user.getRole());
             ctx.redirect("/");
             } else {
                 ctx.sessionAttribute("message", "Forkert brugernavn eller adgangskode. Prøv igen.");

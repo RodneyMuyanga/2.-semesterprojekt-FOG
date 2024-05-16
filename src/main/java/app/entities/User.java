@@ -7,6 +7,7 @@ public class User {
     private int phonenumber;
     private int zipcode;
     private String email;
+    private String role;
 
     private String password;
 
@@ -16,7 +17,12 @@ public class User {
         this.phonenumber = phonenumber;
         this.zipcode = zipcode;
         this.email = email;
+        this.role = role;
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
     }
 
     public User() {}
@@ -44,4 +50,6 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+
 }

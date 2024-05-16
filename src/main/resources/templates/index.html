@@ -40,6 +40,11 @@
                 <button class="btn" type="submit">Opret bruger</button>
             </form>
         </div>
+        <div th:if="${session.userRole == 'admin'}">
+            <form method="get" action="admin.html">
+                <button class="btn" type="submit">Admin</button>
+            </form>
+        </div>
 
     </div></div>
 </body>
