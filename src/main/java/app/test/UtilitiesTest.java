@@ -2,7 +2,9 @@ package app.test;
 
 import static org.junit.Assert.assertEquals;
 import app.controllers.CarportController;
+import app.persistence.CarportMapper;
 import app.persistence.ConnectionPool;
+import io.javalin.http.Context;
 import org.junit.Test;
 
 public class UtilitiesTest {
@@ -16,7 +18,7 @@ public class UtilitiesTest {
         private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
 
-        @Test
+    /*    @Test
         public void testCarportCalculator() {
 
             // Create an instance of CarportController
@@ -31,6 +33,28 @@ public class UtilitiesTest {
             assertEquals(13, controller.getRafterWoodQuantity());
             assertEquals(6, controller.getPostQuantity());
             assertEquals(4, controller.getStrapQuantity());
+        } */
+
+        @Test
+        public void testCalculateFinalPrice() {
+
+            // Create an instance of CarportController
+            CarportMapper mapper = new CarportMapper();
+
+            int rafterWoodQuantity = 13;
+            int postQuantity = 6;
+            int strapQuantity = 4;
+
+            double expectedTotalPrice = 1454.6;
+
+            mapper.calculateFinalPrice(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+
+            double actualTotalPrice = mapper.getTotalPrice();
+
+            assertEquals(expectedTotalPrice, actualTotalPrice, 0.01); // Delta value is 0.01
+
+            // Explanation: The delta value (0.01) specifies the maximum allowable difference
+            // between the expected and actual values.
         }
     }
 

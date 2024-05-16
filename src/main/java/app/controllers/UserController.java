@@ -6,14 +6,25 @@ import io.javalin.Javalin;
 import io.javalin.http.Context;
 import java.sql.SQLException;
 
+import static app.controllers.CarportController.createCarport;
+
 public class UserController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
-        app.post("/payment.html", ctx -> createuser(ctx, connectionPool));
+        app.post("/payment", ctx -> {createuser(ctx, connectionPool);
+            showOrder(ctx);
+        ctx.render("payment.html");});
         app.get("/payment.html", ctx -> ctx.render("payment.html"));
     }
+  
+        private static void showOrder(Context ctx){
+        OrderController.showOrder(ctx);
+        }
+
+
 
     private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
+
         // Retrieve form parameters
         String fullname = ctx.formParam("fullname");
         String adress = ctx.formParam("adress");
@@ -84,6 +95,7 @@ public class UserController {
             ctx.attribute("message", "Der skete en fejl, prøv igen");
             ctx.render("contactinfo.html");
         }
+
     }
 
 

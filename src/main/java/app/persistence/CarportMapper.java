@@ -10,7 +10,49 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class CarportMapper {
+    private static double totalPrice;
 
+    public static double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public static double calculateFinalPrice(int rafterWoodQuantity, int postQuantity, int strapQuantity, ConnectionPool connectionPool) {
+        totalPrice = 0;
+
+        String sql = "SELECT name, price FROM public.material_list WHERE name IN (?, ?, ?)";
+
+        try (
+                Connection connection = connectionPool.getConnection();
+                PreparedStatement ps = connection.prepareStatement(sql);
+                ) {
+            // Set parameters for the SQL query
+            ps.setString(1, "Rem");
+            ps.setString(2, "Stolpe");
+            ps.setString(3, "Spær");
+
+            // Execute the query
+            ResultSet rs = ps.executeQuery();
+
+            // Iterate through the results and calculate the total price
+            while (rs.next()) {
+                double price = rs.getDouble("price");
+                // Multiply price by corresponding quantity and add to total price
+                if (rs.getString("name").equals("Spær")) {
+                    totalPrice += price * rafterWoodQuantity;
+                } else if (rs.getString("name").equals("Stolpe")) {
+                    totalPrice += price * postQuantity;
+                } else if (rs.getString("name").equals("Rem")) {
+                    totalPrice += price * strapQuantity;
+                }
+            }
+                // Add profit margin of 40%
+                 totalPrice *= 1.4;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return totalPrice;
+    }
     public static void insertOrderline(Map<String, String> materialList, int orderId, ConnectionPool connectionPool) {
         String sql = "INSERT INTO orderline (orderlinieid, quantity, product_name, product_description) VALUES (?, ?, ?, ?)";
 
