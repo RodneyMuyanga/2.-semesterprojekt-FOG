@@ -18,6 +18,11 @@ public class UserController {
         app.get("/mypage.html", ctx -> ctx.render("mypage.html"));
         app.get("/index.html", ctx -> ctx.render("index.html"));
         app.get("/createuser.html", ctx -> ctx.render("createuser.html"));
+        app.post("/logout", ctx -> logout(ctx));
+    }
+    private static void logout(Context ctx) {
+        ctx.req().getSession().invalidate();
+        ctx.render("index.html");
     }
 
 private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {

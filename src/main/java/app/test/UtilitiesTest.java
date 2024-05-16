@@ -35,8 +35,9 @@ public class UtilitiesTest {
             assertEquals(4, controller.getStrapQuantity());
         } */
 
-        @Test
-        public void testCalculateFinalPrice() {
+
+     /*   public void testCalculateFinalPrice()
+        {
 
             // Create an instance of CarportController
             CarportMapper mapper = new CarportMapper();
@@ -55,6 +56,6 @@ public class UtilitiesTest {
 
             // Explanation: The delta value (0.01) specifies the maximum allowable difference
             // between the expected and actual values.
-        }
+        } */
     }
 

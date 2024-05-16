@@ -45,6 +45,11 @@
                 <button class="btn" type="submit">Admin</button>
             </form>
         </div>
+        <div th:if="${session.currentUser != null}">
+            <form method="post" action="/logout">
+                <button class= "btn" type="submit">Log ud</button>
+            </form>
+        </div>
 
     </div></div>
 </body>

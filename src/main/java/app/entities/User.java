@@ -25,6 +25,9 @@ public class User {
         return role;
     }
 
+    public String getName() {
+        return name;
+    }
     public User() {}
 
     public void setName(String name) {
