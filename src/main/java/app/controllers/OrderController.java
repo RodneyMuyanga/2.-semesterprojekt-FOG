@@ -3,6 +3,7 @@ import app.entities.Order;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
 import app.persistence.OrderMapper;
+import app.persistence.OrderlineMapper;
 import app.services.CarportSvg;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -62,6 +63,14 @@ public class OrderController {
             e.printStackTrace();
             ctx.status(500).result("Error approving order");
         }
+    }
+
+    public static void insertOrderline(Context ctx, ConnectionPool connectionPool){
+        double width = CarportController.getWidth();
+        double length = CarportController.getLength();
+
+        OrderMapper.insertOrder(width, length, connectionPool);
+
     }
 
 }
