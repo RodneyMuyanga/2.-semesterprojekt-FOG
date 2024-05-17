@@ -8,15 +8,21 @@ import io.javalin.http.Context;
 
 import java.util.Map;
 
+import static app.controllers.OrderController.insertOrderline;
+
 public class CarportController {
     private static int rafterWoodQuantity;
     private static int postQuantity;
     private static int strapQuantity;
 
+    private static double width;
+    private static double length;
+
+    private static double totalPrice;
+
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
         app.get("/specielcarport.html", ctx -> ctx.render("specielcarport.html"));
         app.post("/order.html", ctx -> ctx.render("order.html"));
-        //app.post("/createuser.html", ctx -> {createCarport(ctx, connectionPool); ctx.render("createuser.html");});
         app.post("/orderconfirmation.html", ctx -> {
             if (userIsLoggedIn(ctx)) {
                 ctx.render("orderconfirmation.html");
@@ -24,6 +30,7 @@ public class CarportController {
                 ctx.sessionAttribute("message", "Du skal være logget ind for at bestille");
                 ctx.redirect("/login.html");
             }
+            insertOrderline(ctx, connectionPool);
         });
         app.post("/payment.html", ctx -> {createCarport(ctx, connectionPool);
         showOrder(ctx);
@@ -43,8 +50,8 @@ public class CarportController {
         ctx.sessionAttribute("carportwidth", carportwidth);
         ctx.sessionAttribute("carportlength", carportlength);
 
-        double width = Double.parseDouble(carportwidth);
-        double length = Double.parseDouble(carportlength);
+        width = Double.parseDouble(carportwidth);
+        length= Double.parseDouble(carportlength);
 
             carportCalculater(carportlength, carportwidth, connectionPool, ctx);
             new Carport(width, length, getPostQuantity(), getStrapQuantity(), rafterWoodQuantity);
@@ -57,17 +64,17 @@ public class CarportController {
         double length = Double.parseDouble(carportlength);
 
         rafterWoodQuantity = (int) Math.round(length / 55.0);
-        postQuantity = Math.max((int) Math.round(((length - 100) / 210.0)*2), 4); // Ensuring minimum of 4 posts
+        postQuantity = Math.max((int) Math.round(((length - 100) / 210.0))*2, 4); // Ensuring minimum of 4 posts
         strapQuantity = (int) Math.ceil((length / 360)*2);
 
-        calculatePrice(connectionPool, ctx);
+        calculatePrice(width, length, connectionPool, ctx);
             ctx.render("createuser.html");
         //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
     }
 
-    public static void calculatePrice(ConnectionPool connectionPool, Context ctx) {
+    public static void calculatePrice(double width, double height, ConnectionPool connectionPool, Context ctx) {
 
-        double totalPrice = CarportMapper.calculateFinalPrice(CarportController.getRafterWoodQuantity(), CarportController.getPostQuantity(), CarportController.getStrapQuantity(), connectionPool);
+        totalPrice = CarportMapper.calculateFinalPrice(width, height, CarportController.getRafterWoodQuantity(), CarportController.getPostQuantity(), CarportController.getStrapQuantity(), connectionPool);
         totalPrice = Math.round(totalPrice * 100.0) / 100.0;
         ctx.sessionAttribute("totalPrice", totalPrice);
         ctx.render("/payment.html");
@@ -90,4 +97,9 @@ public class CarportController {
     public static int getStrapQuantity() {
         return strapQuantity;
     }
+
+    public static double getWidth() {return width;}
+    public static double getLength(){return length;}
+
+    public static double getTotalPrice(){return totalPrice;}
 }

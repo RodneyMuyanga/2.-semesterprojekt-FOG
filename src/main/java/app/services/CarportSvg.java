@@ -39,22 +39,17 @@ public class CarportSvg {
 
         containerSvg.addSvg(carportSvg);
 
-        containerSvg.addArrow(30,50,30,length, "stroke:black; ");
-        containerSvg.addArrow(30, length + 50, width+50,length+50 , "stroke:black; ");
+        containerSvg.addArrow(30,50,30,length +50, "stroke:black; ");
+        containerSvg.addArrow(30, length + 50, width+80,length+50 , "stroke:black; ");
 
-
-
-        containerSvg.addText(10, length/2, "rotate(-90 30 300)" , lengthText);
-        containerSvg.addText(viewBoxWidth/2, length + 210, "", widthText );
+        containerSvg.addText(10, containerLength/2, "rotate(-90 30 300)" , lengthText);
+        containerSvg.addText(containerWidth/2, length + 210, "", widthText );
     }
-
 
         public void addStraps(){
         carportSvg.addRectangle(0,35,4.5,width, "stroke-width:2px; stroke:black; fill:white;");
         carportSvg.addRectangle(0,length-35,4.5,width, "stroke-width:2px; stroke:black; fill:white;");
     }
-
-
 
     public void addRafters(){
         int numberOfRafters = CarportController.getRafterWoodQuantity();
@@ -68,7 +63,7 @@ public class CarportSvg {
 
     public void addPosts(){
         int numberOfPosts = CarportController.getPostQuantity();
-        int gapBetweenPosts = (width - 100) / (numberOfPosts - 1); // Calculate the gap between posts
+        int gapBetweenPosts = (width - 100) / ((numberOfPosts/2) - 1); // Calculate the gap between posts
 
 
         for(int i = 50; i <= width - 50; i += gapBetweenPosts) {

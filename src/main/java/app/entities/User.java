@@ -11,7 +11,9 @@ public class User {
 
     private String password;
 
-    public User(int user_id, String name, String adress, int phonenumber, int zipcode, String email, String role, int user_number, String password) {
+    private static int usernumber;
+
+    public User(int usernumber, String name, String adress, int phonenumber, int zipcode, String email, String role, int user_number, String password) {
         this.name = name;
         this.adress = adress;
         this.phonenumber = phonenumber;
@@ -19,6 +21,7 @@ public class User {
         this.email = email;
         this.role = role;
         this.password = password;
+        this.usernumber = usernumber;
     }
 
     public String getRole() {
@@ -28,6 +31,8 @@ public class User {
     public String getName() {
         return name;
     }
+
+    public static int getUsernumber() { return usernumber;}
     public User() {}
 
     public void setName(String name) {

@@ -1,12 +1,10 @@
 package app.persistence;
 
 import app.entities.Order;
+import app.entities.User;
 import app.exceptions.DatabaseException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -52,6 +50,36 @@ public class OrderMapper {
             ps.setInt(1, orderNumber);
             int rowsAffected = ps.executeUpdate();
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static int insertOrder(double width, double length, ConnectionPool connectionPool) {
+        String sql = "INSERT INTO public.\"order\"(\n" +
+                "\t user_number, price, approved, width, length)\n" +
+                "\tVALUES (?, ?, ?, ?, ?);";
+
+        try (Connection connection = connectionPool.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            ps.setInt(1, User.getUsernumber());
+            ps.setDouble(2, CarportMapper.getTotalPrice());
+            ps.setBoolean(3, false);
+            ps.setDouble(4, width);
+            ps.setDouble(5, length);
+
+            ps.executeUpdate();
+
+            // Get the generated order number
+            ResultSet rs = ps.getGeneratedKeys();
+            int orderNumber = 0;
+            if (rs.next()) {
+                orderNumber = rs.getInt(1);
+            }
+            OrderlineMapper.insertOrderline(orderNumber, width, length, connectionPool);
+
+            return orderNumber;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
