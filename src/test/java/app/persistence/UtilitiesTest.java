@@ -1,4 +1,4 @@
-package app.test;
+package app.persistence;
 
 import static org.junit.Assert.assertEquals;
 import app.controllers.CarportController;
@@ -17,38 +17,23 @@ public class UtilitiesTest {
 
         private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
-
-    /*    @Test
-        public void testCarportCalculator() {
-
-            // Create an instance of CarportController
-            CarportController controller = new CarportController();
-
-            // Call the method to calculate
-            String carportLength = "720"; // Example carport length
-            String carportWidth = "300"; // Example carport width
-            controller.carportCalculater(carportLength, carportWidth, connectionPool);
-
-            // Now, you can assert the values of the calculated variables using the getters
-            assertEquals(13, controller.getRafterWoodQuantity());
-            assertEquals(6, controller.getPostQuantity());
-            assertEquals(4, controller.getStrapQuantity());
-        } */
-
-
-     /*   public void testCalculateFinalPrice()
+        @Test
+      public void testCalculateFinalPrice()
         {
 
             // Create an instance of CarportController
             CarportMapper mapper = new CarportMapper();
 
-            int rafterWoodQuantity = 13;
-            int postQuantity = 6;
+            int rafterWoodQuantity = 11;
+            int postQuantity = 4;
             int strapQuantity = 4;
 
-            double expectedTotalPrice = 1454.6;
+            double width = 300;
+            double length = 600;
 
-            mapper.calculateFinalPrice(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+            double expectedTotalPrice = 3234.28;
+
+            mapper.calculateFinalPrice(width, length, rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
 
             double actualTotalPrice = mapper.getTotalPrice();
 
@@ -56,6 +41,6 @@ public class UtilitiesTest {
 
             // Explanation: The delta value (0.01) specifies the maximum allowable difference
             // between the expected and actual values.
-        } */
+        }
     }
 

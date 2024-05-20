@@ -63,9 +63,15 @@ public class OrderMapper {
         try (Connection connection = connectionPool.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
-            ps.setInt(1, User.getUsernumber());
-            ps.setDouble(2, CarportMapper.getTotalPrice());
-            ps.setBoolean(3, false);
+            connection.setAutoCommit(false);  // Start transaction
+
+            int userNumber = User.getUsernumber();
+            double price = CarportMapper.getTotalPrice();
+            boolean approved = false;
+
+            ps.setInt(1, userNumber);
+            ps.setDouble(2, price);
+            ps.setBoolean(3, approved);
             ps.setDouble(4, width);
             ps.setDouble(5, length);
 
@@ -75,14 +81,21 @@ public class OrderMapper {
             ResultSet rs = ps.getGeneratedKeys();
             int orderNumber = 0;
             if (rs.next()) {
-                orderNumber = rs.getInt(1);
+                orderNumber = rs.getInt(2);
             }
+
             OrderlineMapper.insertOrderline(orderNumber, width, length, connectionPool);
+
+            connection.commit();  // Commit transaction
+            connection.setAutoCommit(true);  // Reset auto-commit to true
 
             return orderNumber;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
+
+
 
 }
