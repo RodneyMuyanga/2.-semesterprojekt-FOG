@@ -1,5 +1,6 @@
 package app.controllers;
 import app.entities.Order;
+import app.entities.Orderline;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
 import app.persistence.OrderMapper;
@@ -19,9 +20,17 @@ public class OrderController {
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
     app.get("/admin.html", ctx -> showAllOrders(ctx, connectionPool));
         app.post("/approve", ctx -> approveOrder(ctx, connectionPool));
+        app.post("/order", ctx -> showMaterialList(ctx, connectionPool));
     }
 
 
+    public static void showMaterialList(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
+        int order_number = OrderMapper.getOrderNumber();
+        List<Orderline> orderlines = OrderlineMapper.getOrderLinesByOrderNumber(order_number, connectionPool);
+        ctx.attribute("orderlines", orderlines); // Pass order lines to the context
+        ctx.attribute("ordernumber", order_number); // Pass order number to the context
+        ctx.render("order.html");
+    }
     public static void showOrder(Context ctx) {
         String carportWidth = ctx.sessionAttribute("carportwidth");
         String carportLength = ctx.sessionAttribute("carportlength");

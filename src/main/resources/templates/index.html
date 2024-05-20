@@ -44,10 +44,17 @@
             <form method="get" action="admin.html">
                 <button class="btn" type="submit">Admin</button>
             </form>
-        </div>
+        </div> <br/> <br/>
         <div th:if="${session.currentUser != null}">
             <form method="post" action="/logout">
                 <button class= "btn" type="submit">Log ud</button>
+            </form>
+        </div>
+
+        <br/>
+        <div th:if="${session.currentUser != null}">
+            <form method="post" action="/mypage.html">
+                <button class= "btn" type="submit">Min side</button>
             </form>
         </div>
 

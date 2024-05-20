@@ -1,11 +1,14 @@
 package app.controllers;
+import app.entities.Order;
 import app.entities.User;
 import app.exceptions.DatabaseException;
 import app.persistence.ConnectionPool;
+import app.persistence.OrderMapper;
 import app.persistence.UserMapper;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import java.sql.SQLException;
+import java.util.List;
 
 import static app.controllers.CarportController.createCarport;
 
@@ -16,6 +19,7 @@ public class UserController {
         app.get("/login.html", ctx -> ctx.render("login.html"));
         app.post("/login", ctx -> login(ctx, connectionPool));
         app.get("/mypage.html", ctx -> ctx.render("mypage.html"));
+        app.post("/mypage.html", ctx -> getOrderByUserNumber(ctx, connectionPool));
         app.get("/index.html", ctx -> ctx.render("index.html"));
         app.get("/createuser.html", ctx -> ctx.render("createuser.html"));
         app.post("/logout", ctx -> logout(ctx));
@@ -23,6 +27,14 @@ public class UserController {
     private static void logout(Context ctx) {
         ctx.req().getSession().invalidate();
         ctx.render("index.html");
+    }
+
+    private static void getOrderByUserNumber(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
+        User user = ctx.sessionAttribute("currentUser");
+        int userNumber = user.getUsernumber();
+        List<Order> orders = OrderMapper.getOrdersByUser(userNumber, connectionPool);
+        ctx.attribute("orders", orders); // Pass orders to the context
+        ctx.render("mypage.html");
     }
 
 private static void createuser(Context ctx, ConnectionPool connectionPool) throws DatabaseException {

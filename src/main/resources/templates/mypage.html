@@ -17,6 +17,40 @@
 
 <h3>Min side</h3>
       <p>Her er dine ordrer:</p>
+        <table>
+            <thead>
+            <tr>
+                <th>Ordrenummer</th>
+                <th>Pris</th>
+                <th>Bredde</th>
+                <th>Længde</th>
+                <th>Hvis din bestilling er godkendt,<br/>
+                    kan du se din stykliste her:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.orderNumber}"></td>
+                <td th:text="${order.price}"> kr. </td>
+                <td th:text="${order.width}"></td>
+                <td th:text="${order.length}"></td>
+                <td>
+                    <div th:if="${order.approved}">
+                        <form th:action="@{/order}" method="post" action="order.html" >
+                            <input type="hidden" name="orderNumber" th:value="${order.orderNumber}" />
+                            <button class="btn" type="submit" >Stykliste</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br/><br/><br/>
+        <div th:if="${session.currentUser != null}">
+            <form method="get" action="/index.html">
+                <button class= "btn" type="submit">Forside</button>
+            </form>
+        </div>
         </div>
     </div>
 </body>

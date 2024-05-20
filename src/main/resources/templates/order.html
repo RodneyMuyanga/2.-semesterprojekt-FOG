@@ -10,41 +10,27 @@
 
 
 <h3>Tillykke med din nye carport!</h3>
-<table>
-    <thead>
-    <tr>
-        <th>Beskrivelse</th>
-        <th>Længde</th>
-        <th>Antal</th>
-        <th>Enhed</th>
-        <th>Beskrivelse</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- Her kan du indsætte dine data fra sessionen -->
-    <tr>
-        <td>Spær</td>
-        <td><span th:text="${session.selectedLength}"></span> cm</td>
-        <td><span th:text="${session.rafterWoodQuantity}"></span></td>
-        <td>stk.</td>
-        <td>Beskrivelse af spær</td>
-    </tr>
-    <tr>
-        <td>Stolper</td>
-        <td><span th:text="${session.selectedLength}"></span> cm</td>
-        <td><span th:text="${session.postQuantity}"></span></td>
-        <td>stk.</td>
-        <td>Beskrivelse af stolper</td>
-    </tr>
-    <tr>
-        <td>Rem</td>
-        <td><span th:text="${session.selectedLength}"></span> cm</td>
-        <td><span th:text="${session.strapQuantity}"></span></td>
-        <td>stk.</td>
-        <td>Beskrivelse af rem</td>
-    </tr>
-    </tbody>
-</table>
+<div class="container">
+    <div class="form-container">
+        <span th:text="${orderNumber}"></span>
+        <table>
+            <thead>
+            <tr>
+                <th>Produkt Navn</th>
+                <th>Antal</th>
+                <th>Beskrivelse</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="orderline : ${orderLines}">
+                <td th:text="${orderline.name}"></td>
+                <td th:text="${orderline.quantity}"></td>
+                <td th:text="${orderline.description}"> kr. </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <button class="btn" type="button" onclick="history.back()">Tilbage</button>
 </body>
 </html>

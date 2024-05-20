@@ -10,12 +10,20 @@ public class Orderline {
     private String description;
     private int quantity;
 
-    public Orderline(int user_number, double price, int quantity, String name, String description) {
+    private int orderNumber;
+
+
+    public Orderline(int user_number, double price, int quantity, String name, String description, int orderNumber) {
         this.user_number = user_number;
         this.price = price;
         this.name = name;
         this.description = description;
         this.quantity = quantity;
+        this.orderNumber = orderNumber;
+    }
+
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
     @Override

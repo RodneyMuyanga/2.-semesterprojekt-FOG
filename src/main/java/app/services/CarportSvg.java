@@ -32,20 +32,19 @@ public class CarportSvg {
         containerSvg = new Svg(0, 0, containerViewBox, "100%");
         carportSvg = new Svg(50, 50, viewBox, "100%");
 
-        carportSvg.addRectangle(0,0,length,width, "fill=\"white\" stroke=\"white\" stroke-width=\"2\"");
+        carportSvg.addRectangle(0, 0, length, width, "fill=\"white\" stroke=\"black\" stroke-width=\"2\"");
         addStraps();
         addRafters();
         addPosts();
 
         containerSvg.addSvg(carportSvg);
 
-        containerSvg.addArrow(30,50,30,length +50, "stroke:black; ");
-        containerSvg.addArrow(30, length + 50, width+80,length+50 , "stroke:black; ");
+        /*containerSvg.addArrow(30, 50, 30, length + 50, "stroke:black; stroke-width:2;");
+        containerSvg.addArrow(30, length + 50, width + 50, length + 50, "stroke:black; stroke-width:2;");
 
-        containerSvg.addText(10, containerLength/2, "rotate(-90 30 300)" , lengthText);
-        containerSvg.addText(containerWidth/2, length + 210, "", widthText );
+        containerSvg.addText(10, containerLength / 2, "rotate(-90 10 " + (containerLength / 2) + ")", lengthText);
+        containerSvg.addText(containerWidth / 2, length + 80, "", widthText); */
     }
-
         public void addStraps(){
         carportSvg.addRectangle(0,35,4.5,width, "stroke-width:2px; stroke:black; fill:white;");
         carportSvg.addRectangle(0,length-35,4.5,width, "stroke-width:2px; stroke:black; fill:white;");

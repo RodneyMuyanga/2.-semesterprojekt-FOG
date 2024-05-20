@@ -8,12 +8,19 @@ public class Order {
     private double width;
     private double length;
 
-    public Order(int orderNumber, int userNumber, double price, double width, double length) {
+    private boolean approved;
+
+    public Order(int orderNumber, int userNumber, double price, double width, double length, boolean approved) {
         this.orderNumber = orderNumber;
         this.userNumber = userNumber;
         this.price = price;
         this.width = width;
         this.length = length;
+        this.approved = approved;
+    }
+
+    public boolean getApproved() {
+        return approved;
     }
 
     public int getOrderNumber() {
