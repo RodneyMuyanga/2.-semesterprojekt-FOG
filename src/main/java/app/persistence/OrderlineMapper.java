@@ -17,7 +17,6 @@ import static app.persistence.CarportMapper.getOrderlines;
 
 public class OrderlineMapper {
 
-
     public static void insertOrderline(int ordernumber, double width, double length, ConnectionPool connectionPool) {
 
         String sql = "INSERT INTO public.orderline(\n" +

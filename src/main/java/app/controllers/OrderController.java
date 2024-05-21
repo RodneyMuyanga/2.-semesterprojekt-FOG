@@ -18,11 +18,10 @@ import java.util.Locale;
 public class OrderController {
 
     public static void addRoutes(Javalin app, ConnectionPool connectionPool) {
-    app.get("/admin.html", ctx -> showAllOrders(ctx, connectionPool));
+        app.get("/admin.html", ctx -> showAllOrders(ctx, connectionPool));
         app.post("/approve", ctx -> approveOrder(ctx, connectionPool));
         app.post("/order", ctx -> showMaterialList(ctx, connectionPool));
     }
-
 
     public static void showMaterialList(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
         int order_number = OrderMapper.getOrderNumber();

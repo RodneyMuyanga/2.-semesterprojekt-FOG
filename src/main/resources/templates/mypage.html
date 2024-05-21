@@ -38,7 +38,7 @@
                 <td th:text="${order.length}"></td>
                 <td>
                     <div th:if="${order.approved}">
-                        <form th:action="@{/order}" method="post" action="order.html" >
+                        <form th:action="@{/order}" method="post" >
                             <input type="hidden" name="orderNumber" th:value="${order.orderNumber}" />
                             <button class="btn" type="submit" >Stykliste</button>
                         </form>

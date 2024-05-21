@@ -1,12 +1,11 @@
 package app.controllers;
 import app.entities.Carport;
 import app.entities.User;
+import app.exceptions.DatabaseException;
 import app.persistence.CarportMapper;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-
-import java.util.Map;
 
 import static app.controllers.OrderController.insertOrderline;
 
@@ -31,14 +30,9 @@ public class CarportController {
             }
             insertOrderline(ctx, connectionPool);
         });
-        app.post("/payment.html", ctx -> {createCarport(ctx, connectionPool);
-        showOrder(ctx);
-    });
+        app.post("/payment.html", ctx -> createCarport(ctx, connectionPool));
     }
 
-    private static void showOrder(Context ctx){
-        OrderController.showOrder(ctx);
-    }
 
       public static void createCarport(Context ctx, ConnectionPool connectionPool) {
         //hent form parameter
@@ -54,6 +48,7 @@ public class CarportController {
 
             carportCalculater(carportlength, carportwidth, connectionPool, ctx);
             new Carport(width, length, getPostQuantity(), getStrapQuantity(), rafterWoodQuantity);
+            OrderController.showOrder(ctx);
     }
 
         public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool, Context ctx) {
@@ -67,8 +62,8 @@ public class CarportController {
         strapQuantity = (int) Math.ceil((length / 360)*2);
 
         calculatePrice(width, length, connectionPool, ctx);
-            ctx.render("createuser.html");
-        //CarportMapper.insertOrderline(rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
+        ctx.render("createuser.html");
+
     }
 
     public static void calculatePrice(double width, double height, ConnectionPool connectionPool, Context ctx) {
@@ -100,5 +95,4 @@ public class CarportController {
     public static double getWidth() {return width;}
     public static double getLength(){return length;}
 
-    public static double getTotalPrice(){return totalPrice;}
 }

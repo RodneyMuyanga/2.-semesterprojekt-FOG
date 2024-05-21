@@ -11,9 +11,19 @@ import java.util.List;
 public class OrderMapper {
 
     private static int order_number;
+    private static double width;
+    private static double length;
 
     public static int getOrderNumber(){
         return order_number;
+    }
+
+    public static double getWidth() {
+        return width;
+    }
+
+    public static double getLength() {
+        return length;
     }
 
     public static List<Order> getAllOrders(ConnectionPool connectionPool) throws DatabaseException {
@@ -32,8 +42,8 @@ public class OrderMapper {
                 order_number = rs.getInt("order_number");
                 int user_number = rs.getInt("order_number");
                 double price = rs.getDouble("price");
-                double width = rs.getDouble("width");
-                double length = rs.getDouble("length");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
 
                 double totalPrice = Math.round(price * 100.0) / 100.0;
 
@@ -58,8 +68,8 @@ public class OrderMapper {
                 order_number = rs.getInt("order_number");
                 int userNumberFromDb = rs.getInt("user_number");
                 double price = rs.getDouble("price");
-                double width = rs.getDouble("width");
-                double length = rs.getDouble("length");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
                 boolean approved = rs.getBoolean("approved");
 
                 double priceTwoDecimals = Math.round(price * 100.0) / 100.0;
@@ -126,6 +136,33 @@ public class OrderMapper {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Order getOrderByOrdernumber(int order_number, ConnectionPool connectionPool) throws DatabaseException {
+
+        Order order = null;
+
+        String sql = "SELECT order_number, user_number, price, width, length, approved FROM public.order WHERE order_number= ?";
+
+        try (Connection connection = connectionPool.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1,order_number);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                order_number = rs.getInt("order_number");
+                int userNumberFromDb = rs.getInt("user_number");
+                double price = rs.getDouble("price");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
+                boolean approved = rs.getBoolean("approved");
+
+                double priceTwoDecimals = Math.round(price * 100.0) / 100.0;
+                order = new Order(order_number, userNumberFromDb, priceTwoDecimals, width, length, approved);
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Error in OrderMapper: " + e.getMessage());
+        }
+        return order;
     }
 
 
