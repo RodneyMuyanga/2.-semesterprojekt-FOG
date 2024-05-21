@@ -22,15 +22,17 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="orderline : ${orderLines}">
+            <tr th:each="orderline : ${orderlines}">
                 <td th:text="${orderline.name}"></td>
                 <td th:text="${orderline.quantity}"></td>
                 <td th:text="${orderline.description}"> kr. </td>
             </tr>
             </tbody>
         </table>
+        <form method="post" action="/mypage.html">
+            <button class= "btn" type="submit">Min side</button>
+        </form>
     </div>
 </div>
-<button class="btn" type="button" onclick="history.back()">Tilbage</button>
 </body>
 </html>

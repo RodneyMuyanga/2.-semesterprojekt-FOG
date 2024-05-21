@@ -31,7 +31,9 @@
             <tbody>
             <tr th:each="order : ${orders}">
                 <td th:text="${order.orderNumber}"></td>
-                <td th:text="${order.price}"> kr. </td>
+                <td>
+                    <span th:text="${order.price}"></span> kr.
+                </td>
                 <td th:text="${order.width}"></td>
                 <td th:text="${order.length}"></td>
                 <td>
