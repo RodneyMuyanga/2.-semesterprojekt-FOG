@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-22T08:30:44.866Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="bSCVLbrMshd54_fwMD5m" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-22T08:36:57.904Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="YLOOGuFjy1AQIiZxH7zz" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1354" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1259" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -77,16 +77,16 @@
           <mxGeometry y="26" width="160" height="24" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-0" value="CarportController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-40" y="180" width="360" height="310" as="geometry" />
+          <mxGeometry x="-40" y="180" width="390" height="310" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-1" value="&lt;div&gt;- &lt;b&gt;int &lt;/b&gt;rafterWoodQuantity&lt;/div&gt;&lt;div&gt;- &lt;b&gt;int &lt;/b&gt;postQuantity&lt;/div&gt;&lt;div&gt;- &lt;b&gt;int &lt;/b&gt;strapQuantity&lt;/div&gt;&lt;div&gt;- &lt;b&gt;double &lt;/b&gt;width&lt;/div&gt;&lt;div&gt;- &lt;b&gt;double &lt;/b&gt;length&lt;/div&gt;&lt;div&gt;- &lt;b&gt;double &lt;/b&gt;totalPrice&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-0">
-          <mxGeometry y="26" width="360" height="94" as="geometry" />
+          <mxGeometry y="26" width="390" height="94" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-0">
-          <mxGeometry y="120" width="360" height="8" as="geometry" />
+          <mxGeometry y="120" width="390" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="noGmrEyYQJOlF5a7A0Va-3" value="&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;addRoutes(Javalin, ConnectionPool)&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;createCarport(Context, ConnectionPool)&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;carportCalculater(String, String, ConnectionPool, Context)&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;calculatePrice(double, double, ConnectionPool, Context)&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;int &lt;/b&gt;getRafterWoodQuantity()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;int &lt;/b&gt;getPostQuantity()&lt;/div&gt;&lt;div&gt;+  &lt;b&gt;int &lt;/b&gt;getStrapsQuantity()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getWidth()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getLength()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getTotalPrice()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-0">
-          <mxGeometry y="128" width="360" height="182" as="geometry" />
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-3" value="&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;addRoutes&lt;b&gt;(Javalin, ConnectionPool)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;createCarport&lt;b&gt;(Context, ConnectionPool)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;carportCalculater&lt;b&gt;(String, String, ConnectionPool, Context)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;calculatePrice&lt;b&gt;(double, double, ConnectionPool, Context)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;int &lt;/b&gt;getRafterWoodQuantity()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;int &lt;/b&gt;getPostQuantity()&lt;/div&gt;&lt;div&gt;+  &lt;b&gt;int &lt;/b&gt;getStrapsQuantity()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getWidth()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getLength()&lt;/div&gt;&lt;div&gt;+ &lt;b&gt;double &lt;/b&gt;getTotalPrice()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-0">
+          <mxGeometry y="128" width="390" height="182" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-4" value="OrderController&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="827" y="340" width="360" height="110" as="geometry" />
@@ -155,7 +155,7 @@
           <mxGeometry y="26" width="110" height="24" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-30" value="ConnectionPool" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-240" y="680" width="430" height="170" as="geometry" />
+          <mxGeometry x="-500" y="320" width="430" height="170" as="geometry" />
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-31" value="&lt;div&gt;- &lt;b&gt;ConnectionPool &lt;/b&gt;instance;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;HikariDataSource &lt;/b&gt;ds;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-30">
           <mxGeometry y="26" width="430" height="44" as="geometry" />
@@ -165,6 +165,18 @@
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-33" value="+&lt;i&gt;ConnectionPool&lt;/i&gt;&lt;b&gt; &lt;/b&gt;getInstace&lt;b&gt;(String, String, String, String)&lt;/b&gt;&lt;div&gt;+ &lt;i&gt;Connection&lt;/i&gt;&lt;b&gt; &lt;/b&gt;getConnection()&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void&lt;/i&gt;&lt;b&gt; &lt;/b&gt;close()&lt;/div&gt;&lt;div&gt;- &lt;i&gt;HikariDataSource &lt;/i&gt;crateHikariConnectionPool&lt;b&gt;(String, String, String,String)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-30">
           <mxGeometry y="78" width="430" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-35" value="CarportSvg" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-430" y="520" width="360" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-36" value="&lt;div&gt;- &lt;b&gt;int &lt;/b&gt;width;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;int &lt;/b&gt;length;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;Svg &lt;/b&gt;carportSvg;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;Svg &lt;/b&gt;containerSvg;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;int&amp;nbsp; &lt;/b&gt;containerWidth;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;int&amp;nbsp; &lt;/b&gt;containerLength;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-35">
+          <mxGeometry y="26" width="360" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-35">
+          <mxGeometry y="120" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-38" value="&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;CarportSvg&lt;b&gt;(int, int)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;addStraps()&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;addRafters()&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;addPosts()&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void &lt;/i&gt;toString()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-35">
+          <mxGeometry y="128" width="360" height="82" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
