@@ -26,11 +26,11 @@ public class OrderMapper {
         return length;
     }
 
-    public static List<Order> getAllOrders(ConnectionPool connectionPool) throws DatabaseException {
+    public static List<Order> getAllOrders(ConnectionPool connectionPool, String schema) throws DatabaseException {
 
         List<Order> orders = new ArrayList<>();
 
-        String sql = "SELECT order_number, user_number, price, width, length FROM public.order WHERE approved = false";
+        String sql = String.format("SELECT order_number, user_number, price, width, length FROM %s.order WHERE approved = false", schema);
 
 
         try (
@@ -40,7 +40,7 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 order_number = rs.getInt("order_number");
-                int user_number = rs.getInt("order_number");
+                int user_number = rs.getInt("user_number");
                 double price = rs.getDouble("price");
                 width = rs.getDouble("width");
                 length = rs.getDouble("length");

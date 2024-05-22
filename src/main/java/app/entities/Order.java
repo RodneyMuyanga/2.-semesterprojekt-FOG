@@ -42,4 +42,16 @@ public class Order {
     public double getLength() {
         return length;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderNumber=" + orderNumber +
+                ", userNumber=" + userNumber +
+                ", price=" + price +
+                ", width=" + width +
+                ", length=" + length +
+                ", approved=" + approved +
+                '}';
+    }
 }

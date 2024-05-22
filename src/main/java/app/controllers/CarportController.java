@@ -46,12 +46,14 @@ public class CarportController {
         width = Double.parseDouble(carportwidth);
         length= Double.parseDouble(carportlength);
 
-            carportCalculater(carportlength, carportwidth, connectionPool, ctx);
+            carportCalculater(carportlength, carportwidth, connectionPool);
             new Carport(width, length, getPostQuantity(), getStrapQuantity(), rafterWoodQuantity);
             OrderController.showOrder(ctx);
+          ctx.sessionAttribute("totalPrice", totalPrice);
+          ctx.render("/payment.html");
     }
 
-        public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool, Context ctx) {
+        public static void carportCalculater(String carportlength, String carportwidth, ConnectionPool connectionPool) {
 
     // Convert string values to double
         double width = Double.parseDouble(carportwidth);
@@ -62,9 +64,6 @@ public class CarportController {
         strapQuantity = (int) Math.ceil((length / 360)*2);
 
         calculatePrice(width, length, connectionPool);
-            ctx.sessionAttribute("totalPrice", totalPrice);
-            ctx.render("/payment.html");
-            ctx.render("createuser.html");
 
     }
 

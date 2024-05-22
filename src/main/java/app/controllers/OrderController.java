@@ -48,7 +48,7 @@ public class OrderController {
     {
         try
         {
-            List<Order> orders = OrderMapper.getAllOrders(connectionPool);
+            List<Order> orders = OrderMapper.getAllOrders(connectionPool, "public");
             ctx.sessionAttribute("orders", orders);
             ctx.render("admin.html");
         } catch (DatabaseException e)
