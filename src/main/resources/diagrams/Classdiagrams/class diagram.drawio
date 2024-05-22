@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-22T08:20:41.041Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="jgCScKsUpjqoVMOgw79Q" version="24.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-22T08:30:44.866Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0" etag="bSCVLbrMshd54_fwMD5m" version="24.4.4" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2589" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1354" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -153,6 +153,18 @@
         </mxCell>
         <mxCell id="noGmrEyYQJOlF5a7A0Va-29" value="+ render()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-28">
           <mxGeometry y="26" width="110" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-30" value="ConnectionPool" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-240" y="680" width="430" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-31" value="&lt;div&gt;- &lt;b&gt;ConnectionPool &lt;/b&gt;instance;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- &lt;b&gt;HikariDataSource &lt;/b&gt;ds;&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-30">
+          <mxGeometry y="26" width="430" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-30">
+          <mxGeometry y="70" width="430" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="noGmrEyYQJOlF5a7A0Va-33" value="+&lt;i&gt;ConnectionPool&lt;/i&gt;&lt;b&gt; &lt;/b&gt;getInstace&lt;b&gt;(String, String, String, String)&lt;/b&gt;&lt;div&gt;+ &lt;i&gt;Connection&lt;/i&gt;&lt;b&gt; &lt;/b&gt;getConnection()&lt;/div&gt;&lt;div&gt;+ &lt;i&gt;void&lt;/i&gt;&lt;b&gt; &lt;/b&gt;close()&lt;/div&gt;&lt;div&gt;- &lt;i&gt;HikariDataSource &lt;/i&gt;crateHikariConnectionPool&lt;b&gt;(String, String, String,String)&lt;/b&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="noGmrEyYQJOlF5a7A0Va-30">
+          <mxGeometry y="78" width="430" height="92" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
