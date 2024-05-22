@@ -17,6 +17,7 @@ public class UtilitiesTest {
 
         private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
+
         @Test
       public void testCalculateFinalPrice()
         {
