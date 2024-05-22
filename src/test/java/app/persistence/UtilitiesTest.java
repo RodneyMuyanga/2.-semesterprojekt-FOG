@@ -17,6 +17,23 @@ public class UtilitiesTest {
 
         private static final ConnectionPool connectionPool = ConnectionPool.getInstance(USER, PASSWORD, URL, DB);
 
+       @Test
+        public void testCarportCalculator() {
+
+            // Create an instance of CarportController
+            CarportController controller = new CarportController();
+
+            // Call the method to calculate
+            String carportLength = "720"; // Example carport length
+            String carportWidth = "300"; // Example carport width
+            controller.carportCalculater(carportLength, carportWidth, connectionPool);
+
+            // Now, you can assert the values of the calculated variables using the getters
+            assertEquals(13, controller.getRafterWoodQuantity());
+            assertEquals(6, controller.getPostQuantity());
+            assertEquals(4, controller.getStrapQuantity());
+        }
+
         @Test
       public void testCalculateFinalPrice()
         {

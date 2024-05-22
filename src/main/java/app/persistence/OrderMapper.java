@@ -6,17 +6,31 @@ import app.exceptions.DatabaseException;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class OrderMapper {
 
-    public static List<Order> getAllOrders(ConnectionPool connectionPool) throws DatabaseException {
+    private static int order_number;
+    private static double width;
+    private static double length;
+
+    public static int getOrderNumber(){
+        return order_number;
+    }
+
+    public static double getWidth() {
+        return width;
+    }
+
+    public static double getLength() {
+        return length;
+    }
+
+    public static List<Order> getAllOrders(ConnectionPool connectionPool, String schema) throws DatabaseException {
 
         List<Order> orders = new ArrayList<>();
 
-        String sql = "SELECT order_number, user_number, price, width, length FROM public.order WHERE approved = false";
+        String sql = String.format("SELECT order_number, user_number, price, width, length FROM %s.order WHERE approved = false", schema);
 
 
         try (
@@ -25,13 +39,15 @@ public class OrderMapper {
         ) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                int order_number = rs.getInt("order_number");
-                int user_number = rs.getInt("order_number");
+                order_number = rs.getInt("order_number");
+                int user_number = rs.getInt("user_number");
                 double price = rs.getDouble("price");
-                double width = rs.getDouble("width");
-                double length = rs.getDouble("length");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
 
-                Order order = new Order(order_number, user_number, price, width, length);
+                double totalPrice = Math.round(price * 100.0) / 100.0;
+
+                Order order = new Order(order_number, user_number, totalPrice, width, length, false);
                 orders.add(order);
             }
         } catch (SQLException e) {
@@ -39,8 +55,35 @@ public class OrderMapper {
         }
         return orders;
     }
+    public static List<Order> getOrdersByUser(int userNumber, ConnectionPool connectionPool) throws DatabaseException {
+        List<Order> orders = new ArrayList<>();
 
-    public static void approveOrder(ConnectionPool connectionPool, int orderNumber) {
+        String sql = "SELECT order_number, user_number, price, width, length, approved FROM public.order WHERE user_number = ?";
+
+        try (Connection connection = connectionPool.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, userNumber);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                order_number = rs.getInt("order_number");
+                int userNumberFromDb = rs.getInt("user_number");
+                double price = rs.getDouble("price");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
+                boolean approved = rs.getBoolean("approved");
+
+                double priceTwoDecimals = Math.round(price * 100.0) / 100.0;
+                Order order = new Order(order_number, userNumberFromDb, priceTwoDecimals, width, length, approved);
+                orders.add(order);
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Error in OrderMapper: " + e.getMessage());
+        }
+        return orders;
+    }
+
+
+    public static void approveOrder(ConnectionPool connectionPool, int orderNumber) throws DatabaseException {
         String sql = "UPDATE public.\"order\" SET approved = true WHERE order_number = ?";
 
         try (
@@ -51,7 +94,7 @@ public class OrderMapper {
             int rowsAffected = ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DatabaseException("Error in OrderMapper: " + e.getMessage());
         }
     }
 
@@ -93,6 +136,33 @@ public class OrderMapper {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static Order getOrderByOrdernumber(int order_number, ConnectionPool connectionPool) throws DatabaseException {
+
+        Order order = null;
+
+        String sql = "SELECT order_number, user_number, price, width, length, approved FROM public.order WHERE order_number= ?";
+
+        try (Connection connection = connectionPool.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1,order_number);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                order_number = rs.getInt("order_number");
+                int userNumberFromDb = rs.getInt("user_number");
+                double price = rs.getDouble("price");
+                width = rs.getDouble("width");
+                length = rs.getDouble("length");
+                boolean approved = rs.getBoolean("approved");
+
+                double priceTwoDecimals = Math.round(price * 100.0) / 100.0;
+                order = new Order(order_number, userNumberFromDb, priceTwoDecimals, width, length, approved);
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Error in OrderMapper: " + e.getMessage());
+        }
+        return order;
     }
 
 

@@ -29,6 +29,11 @@
         </li>
     </ul>
 </div>
+        <div th:if="${session.currentUser != null}">
+            <form method="get" action="/index.html">
+                <button class= "btn" type="submit">Forside</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>

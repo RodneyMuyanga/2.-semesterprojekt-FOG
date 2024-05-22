@@ -75,7 +75,7 @@ public class CarportMapper {
 
                     count++;
 
-                    orderlines.put(count, new Orderline(User.getUsernumber(), linePrice, quantity, name, description));
+                    orderlines.put(count, new Orderline(User.getUsernumber(), linePrice, quantity, name, description, OrderMapper.getOrderNumber()));
                     totalPrice += linePrice;
                 }
             }

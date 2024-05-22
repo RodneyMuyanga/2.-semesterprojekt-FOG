@@ -18,7 +18,12 @@
 <h3>Vi godkender din bestilling hurtigst muligt</h3>
         <div>
         <button class="btn" type="button" onclick="window.location.href='/index.html'">Til forsiden</button>
-        <button class="btn" type="button" onclick="window.location.href='/mypage.html'">Min side</button>
+            <br/><br/>
+            <div th:if="${session.currentUser != null}">
+                <form method="post" action="/mypage.html">
+                    <button class= "btn" type="submit">Min side</button>
+                </form>
+            </div>
         </div>
         </div>
 </div>

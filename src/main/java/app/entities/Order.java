@@ -8,12 +8,19 @@ public class Order {
     private double width;
     private double length;
 
-    public Order(int orderNumber, int userNumber, double price, double width, double length) {
+    private boolean approved;
+
+    public Order(int orderNumber, int userNumber, double price, double width, double length, boolean approved) {
         this.orderNumber = orderNumber;
         this.userNumber = userNumber;
         this.price = price;
         this.width = width;
         this.length = length;
+        this.approved = approved;
+    }
+
+    public boolean getApproved() {
+        return approved;
     }
 
     public int getOrderNumber() {
@@ -34,5 +41,17 @@ public class Order {
 
     public double getLength() {
         return length;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderNumber=" + orderNumber +
+                ", userNumber=" + userNumber +
+                ", price=" + price +
+                ", width=" + width +
+                ", length=" + length +
+                ", approved=" + approved +
+                '}';
     }
 }
