@@ -81,7 +81,6 @@ class OrderMapperTest {
         try {
             int expected = 2;
             List<Order> actualOrders = OrderMapper.getAllOrders(connectionPool, "test");
-            System.out.println("Number of Orders Fetched: " + actualOrders.size());
             assertEquals(expected, actualOrders.size());
 
         } catch (DatabaseException e) {

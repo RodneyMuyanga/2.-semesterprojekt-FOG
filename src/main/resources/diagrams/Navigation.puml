@@ -1,0 +1,36 @@
+@startuml
+title Fog Navigationsdiagram
+
+state "index.html" as index
+state "createuser.html" as createuser
+state "login.html" as login
+state "mypage.html" as mypage
+state "specielcarport.html" as specielcarport
+state "payment.html" as payment
+state "order.html" as order
+state "orderconfirmation.html" as orderconfirmation
+state "admin.html" as admin
+
+[*] --> index : Start
+
+index --> createuser : "Opret Bruger /createuser"
+createuser --> index : "Return /"
+
+index --> login : "Login /login"
+login --> index : "Return /"
+
+index --> specielcarport : "Byg Selv Carport /specielcarport"
+specielcarport --> payment : "Se Tegning og Pris /payment"
+
+payment --> orderconfirmation : "Bestil (If Logged In) /orderconfirmation"
+orderconfirmation --> mypage : "Gå til Min Side /mypage"
+
+mypage --> order : "Se Stykliste (If Approved) /order"
+
+index --> mypage : "Min Side (If Logged In) /mypage"
+
+index --> admin : "Se ordrer (if Admin Logged In) /admin"
+admin --> index : "Log Ud /"
+
+index --> [*] : "Log Ud /logout"
+@enduml

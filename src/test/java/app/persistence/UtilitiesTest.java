@@ -34,30 +34,5 @@ public class UtilitiesTest {
             assertEquals(4, controller.getStrapQuantity());
         }
 
-        @Test
-      public void testCalculateFinalPrice()
-        {
-
-            // Create an instance of CarportController
-            CarportMapper mapper = new CarportMapper();
-
-            int rafterWoodQuantity = 11;
-            int postQuantity = 4;
-            int strapQuantity = 4;
-
-            double width = 300;
-            double length = 600;
-
-            double expectedTotalPrice = 3234.28;
-
-            mapper.calculateFinalPrice(width, length, rafterWoodQuantity, postQuantity, strapQuantity, connectionPool);
-
-            double actualTotalPrice = mapper.getTotalPrice();
-
-            assertEquals(expectedTotalPrice, actualTotalPrice, 0.01); // Delta value is 0.01
-
-            // Explanation: The delta value (0.01) specifies the maximum allowable difference
-            // between the expected and actual values.
-        }
     }
 

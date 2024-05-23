@@ -69,7 +69,7 @@ public class CarportController {
 
     public static void calculatePrice(double width, double height, ConnectionPool connectionPool) {
 
-        totalPrice = CarportMapper.calculateFinalPrice(width, height, CarportController.getRafterWoodQuantity(), CarportController.getPostQuantity(), CarportController.getStrapQuantity(), connectionPool);
+        totalPrice = CarportMapper.calculateFinalPrice("public", width, height, CarportController.getRafterWoodQuantity(), CarportController.getPostQuantity(), CarportController.getStrapQuantity(), connectionPool);
         totalPrice = Math.round(totalPrice * 100.0) / 100.0;
     }
     private static boolean userIsLoggedIn(Context ctx) {
