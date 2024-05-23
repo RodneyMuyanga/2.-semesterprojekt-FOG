@@ -44,7 +44,8 @@ public class CarportMapper {
         return orderlines;
     }
 
-    public static double calculateFinalPrice(double width, double length, int rafterWoodQuantity, int postQuantity, int strapQuantity, ConnectionPool connectionPool) {
+    public static double calculateFinalPrice(String schema, double width, double length, int rafterWoodQuantity,
+                                             int postQuantity, int strapQuantity, ConnectionPool connectionPool) {
         totalPrice = 0;
         int count = 0;
         orderlines = new LinkedHashMap<>(); // Initialize orderlines map
@@ -75,7 +76,8 @@ public class CarportMapper {
 
                     count++;
 
-                    orderlines.put(count, new Orderline(User.getUsernumber(), linePrice, quantity, name, description, OrderMapper.getOrderNumber()));
+                    orderlines.put(count, new Orderline(User.getUsernumber(), linePrice, quantity, name,
+                            description, OrderMapper.getOrderNumber()));
                     totalPrice += linePrice;
                 }
             }

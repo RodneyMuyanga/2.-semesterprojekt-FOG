@@ -26,8 +26,8 @@ public class OrderController {
     public static void showMaterialList(Context ctx, ConnectionPool connectionPool) throws DatabaseException {
         int order_number = Integer.parseInt(ctx.formParam("orderNumber"));
         List<Orderline> orderlines = OrderlineMapper.getOrderLinesByOrderNumber(order_number, connectionPool);
-        ctx.attribute("orderlines", orderlines); // Pass order lines to the context
-        ctx.attribute("ordernumber", order_number); // Pass order number to the context
+        ctx.attribute("orderlines", orderlines); // Pass orderlines to the context
+        ctx.attribute("ordernumber", order_number); // Pass order_number to the context
         ctx.render("order.html");
     }
     public static void showOrder(Context ctx) {
